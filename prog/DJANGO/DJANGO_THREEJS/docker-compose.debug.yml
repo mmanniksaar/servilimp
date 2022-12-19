@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  djangothreejs:
+    image: djangothreejs
+    build:
+      context: .
+      dockerfile: ./Dockerfile
