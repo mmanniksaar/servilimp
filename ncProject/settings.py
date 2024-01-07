@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7lrx*kahe73qqbu)*q$8!=@h1$88=l08bm0&q_blv%+d5wwt3n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['servilimp-3a5ad048a799.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','servilimp-3a5ad048a799.herokuapp.com']
 
 
 # Application definition
@@ -40,6 +40,16 @@ INSTALLED_APPS = [
     'compressor',
     'gallery',
     'clients',
+    'axes',
+    'defender',
+]
+
+AUTHENTICATION_BACKENDS = [
+    # AxesStandaloneBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
+    'axes.backends.AxesStandaloneBackend',
+
+    # Django ModelBackend is the default authentication backend.
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'defender.middleware.FailedLoginMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'ncProject.urls'
@@ -151,6 +163,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+# ...
+AXES_REDIS_URL = 'redis://localhost:6379/1'  # Muutke vastavalt oma Redis-serveri konfiguratsioonile
+DEFENDER_REDIS_URL = 'redis://localhost:6379/2'  # Muutke vastavalt oma Redis-serveri konfiguratsioonile
+# ...
+
+# Axes seaded
+AXES_FAILURE_LIMIT = 3  # Määrake vajalik viga limiit
+AXES_LOCK_OUT_AT_FAILURE = True  # Lukusta kasutaja pärast ebaõnnestunud katsete limiidi ületamist
+#AXES_USE_USER_AGENT = True  # Kaasa kasutaja agent ebaõnnestumise raportis
+AXES_COOLOFF_TIME = 1  # Lukustamise aeg minutites
+
 
 
 if 'DATABASE_URL' in os.environ:

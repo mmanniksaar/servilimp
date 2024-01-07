@@ -13,6 +13,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('clients/', views.clients, name='clients'),
     path('admin/', admin.site.urls),
+    path('admin/defender/', include('defender.urls')),  # defender admin
     path('clients/', include('clients.urls')),        # 'clients/' clients.urls suunab faili clients/urls.py
     path('gallery/', include('gallery.urls')),        # 'gallery/' gallery.urls suunab faili gallery/urls.py
   #  path('cart/', include('carts.urls')),

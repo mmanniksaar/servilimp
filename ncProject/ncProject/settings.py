@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7lrx*kahe73qqbu)*q$8!=@h1$88=l08bm0&q_blv%+d5wwt3n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['servilimp-3a5ad048a799.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','servilimp-3a5ad048a799.herokuapp.com']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
+    'axes',
+    'defender',
     'gallery',
     'clients',
 ]
@@ -51,6 +53,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middelware.AxesMiddleware',
+    'defender.middleware.FailedLoginMiddleware',
+
 ]
 
 ROOT_URLCONF = 'ncProject.urls'
@@ -99,6 +104,11 @@ COMPRESS_ENABLED = True
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+AUTHENTICATION_BACKENDS = [
+   'axes.backends.AxesBackend', # Axes must be first
+   'django.contrib.auth.backends.ModelBackend',
+]
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -127,6 +137,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Axes settings
+
+AXES_FAILURE_LIMIT = 3  # Määrake vajalik viga limiit
+AXES_LOCK_OUT_AT_FAILURE = True  # Lukusta kasutaja pärast ebaõnnestunud katsete limiidi ületamist
+AXES_USE_USER_AGENT = True  # Kaasa kasutaja agent ebaõnnestumise raportis
+AXES_COOLOFF_TIME = 1  # Lukustamise aeg minutites
+
 
 
 # Static files (CSS, JavaScript, Images)
