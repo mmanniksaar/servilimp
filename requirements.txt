@@ -8,7 +8,9 @@ libsass==0.22.0
 Django==3.2.23
 django-cloudinary-storage==0.3.0
 idna==3.6
+packaging==23.2
 Pillow==9.5.0
+psycopg2-binary==2.9.9
 pytz==2023.3.post1
 requests==2.31.0
 six==1.16.0
