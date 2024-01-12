@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<script type="text/javascript" src="{% static 'js/logo.js' %}"></script> <!--logo-->
+<link href="{% static 'css/home.css' %}" type="text/css" rel="stylesheet">
+
+
+<body>
+
+
+
+
+    <div class="video-container">
+
+        <div class="choice-container">
+            <div class="grid-container">
+                <button class="choice-button2">TABLEWARE AND WAITSTAFF RENTAL</button>
+                <button class="choice-button1">CLEANING SERVICE</button>
+            </div>
+        </div>
+
+        <div class="logo-container">
+            <a href="{% url 'home' %}">
+               <!-- <img src="{% get_media_prefix %}pictures/servilimp_logo2.png" id="animated-logo"width="180" height="180" alt="Logo">-->
+                <img src="{% static 'pictures/servilimp_logo2.png' %}" id="animated-logo" width="180" height="180" alt="Logo">
+
+            </a>
+        </div>
+    
+        <div class="video-content">
+            <video autoplay loop muted>
+                <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p>&copy; 2023 Marek Männiksaar. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+{% endblock%}

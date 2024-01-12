@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/contact.css' %}" type="text/css" rel="stylesheet">
+
+<div class="video-container">
+
+<div class="contact-container">
+
+        <div class="contact-info">
+            <h1 class="title">Manager and Owner</h1>
+            <p class="name">Mr. Carlos Bravo</p>
+            <p>Website: <a href="http://www.servilimp.fi" target="_blank">www.servilimp.fi</a></p>
+            <p>Phone: 050 323 6847</p>
+            <p>Email: <a href="mailto:servlimp2001@gmail.com">servlimp2001@gmail.com</a></p>
+        </div>
+        <div class="form-container">
+            <form action="/action_page.php">
+              <label for="fname">Your Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name..">
+          
+              <label for="lname">Email</label>
+              <input type="text" id="lname" name="email" placeholder="Your email..">
+          
+             
+          
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          
+              <input type="submit" value="Send">
+            </form>
+          </div>
+
+</div>
+<div class="video-content">
+    <video autoplay loop muted>
+    <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </div>
+</div>
+{% endblock%}

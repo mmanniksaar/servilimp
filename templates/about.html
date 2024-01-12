@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/about.css' %}" type="text/css" rel="stylesheet">
+
+                <div class="about-video-container">
+                    <div class="about-container">
+                        <h1 id="animated_first">We afford you the liberty to savor the company of your guests, unburdened by concerns and accompanied by a distinctive touch of elegance. Should your guests be pleasantly surprised and your satisfaction ensured, it mirrors our own fulfillment.</h2>
+                            <br>
+                            <hr>
+                            <br>
+
+                        <h2 id="animated_second">Mission</h2>
+                        <p id="animated_second">
+Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
+"With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!"
+Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
+"With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
+Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
+"With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
+Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
+"With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
+Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
+"With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
+Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
+"With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
+                        </p>
+                        <br>
+                        <hr>
+                        <br>
+
+                        <h2 id="animated_third">VISION STATEMENT</h2>
+<p id="animated_third">
+Our vision is to perpetuate our standing as the embodiment of elegance, efficiency, and, above all, trust. Through this commitment, we aspire to expand our presence across diverse sectors. At all times, our client remains the focal point of our endeavors, reinforcing our dedication to exceptional service.
+                        </p>
+                    </div>
+                    
+                <div class="about-video-content">
+                    <video autoplay loop muted id="myVideo">
+                        <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+
+    
+    <script>
+        var video = document.getElementById("myVideo");
+        video.playbackRate = 0.4; // Muutke kiirust vastavalt vajadusele
+    </script>
+
+<script>
+  const tl = gsap.timeline({
+  onComplete: () => {
+    // Liikumine on lõppenud, saate käivitada värvi muutmise animatsiooni
+    gsap.to("#animated_first", { color: "#ccc", duration: 2 });
+  },
+});
+
+tl.from("#animated_first", {
+  x: "100%", // Alustab väljaspoolt paremal
+  duration: 1, // Animatsiooni kestvus sekundites
+  ease: "power2.out", // Animatsiooni lihtsustusfunktsioon (võib muuta vastavalt soovile)
+});
+
+const tl1 = gsap.timeline({
+  onComplete: () => {
+    // Liikumine on lõppenud, saate käivitada värvi muutmise animatsiooni
+    gsap.to("#animated_second", { color: "#ccc", duration: 2 });
+  },
+});
+
+tl1.from("#animated_second", {
+  x: "-100%", // Alustab väljaspoolt paremal
+  duration: 1, // Animatsiooni kestvus sekundites
+  ease: "power2.out", // Animatsiooni lihtsustusfunktsioon (võib muuta vastavalt soovile)
+});
+    
+const tl2 = gsap.timeline({
+  onComplete: () => {
+    // Liikumine on lõppenud, saate käivitada värvi muutmise animatsiooni
+    gsap.to("#animated_third", { color: "#ccc", duration: 2 });
+  },
+});
+
+tl2.from("#animated_third", {
+  x: "100%", // Alustab väljaspoolt paremal
+  duration: 1, // Animatsiooni kestvus sekundites
+  ease: "power2.out", // Animatsiooni lihtsustusfunktsioon (võib muuta vastavalt soovile)
+});
+
+</script>
+
+
+    {% endblock%}

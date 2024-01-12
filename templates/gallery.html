@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/gallery.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'css/zoom.css' %}" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="{% static 'js/zoom.js' %}"></script> <!--modal-->
+
+<div class="video-container">
+
+  <div class="gallery-container">
+
+	<div class="card__container">
+      {% if gallery_items %}
+        {% for gallery_item in gallery_items %}
+          <article class="card__article">
+            <img src="{{ gallery_item.gallery_image.url }}" alt="{{ gallery_item.description }}" class="card__img">
+            <div class="card__data">
+              <span class="card__description">{{ gallery_item.name }}</span>
+              <h2 class="card__title">{{ gallery_item.name }}</h2>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      {% else %}
+        <div class="text-center">
+          <h2> No items found. </h2>
+          <hr>
+          <br>
+          <a href="{% url 'gallery' %}" class="btn btn-primary" style="background-color:#482809"; >Continue watching</a>
+        </div>
+      {% endif %}
+	
+  </div>
+  <div class="video-content">
+    <video autoplay loop muted>
+    <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </div>
+</div>
+
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal Content (The Image) -->
+	<img class="modal-content" id="img01">
+
+	<!-- Modal Caption (Image Text) -->
+	<div id="caption"></div>
+</div>
+
+
+
+{% endblock%}
