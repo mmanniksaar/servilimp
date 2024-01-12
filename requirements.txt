@@ -6,7 +6,7 @@ dj-database-url==2.1.0
 Django==3.2.23
 django-cloudinary-storage==0.3.0
 idna==3.6
-Pillow==9.5.0
+Pillow==8.2.0
 pytz==2023.3.post1
 requests==2.31.0
 six==1.16.0
