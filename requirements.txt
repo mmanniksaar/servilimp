@@ -11,6 +11,8 @@ importlib-metadata==6.7.0
 packaging==23.2
 Pillow==8.2.0
 psycopg2-binary==2.9.9
+python-decouple==3.8
+python-dotenv==0.21.1
 pytz==2023.3.post1
 requests==2.31.0
 six==1.16.0
