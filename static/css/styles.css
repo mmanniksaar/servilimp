@@ -106,6 +106,16 @@ footer {
     bottom: 0;
     width: 100%;
     font-size: medium;
+    opacity: 0.7;
+}
+
+footer p {
+    /*text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;*/
+    background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
+
 }
 
 

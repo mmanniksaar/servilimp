@@ -112,7 +112,7 @@
 .logo-container {
     width: 80vh; /* Logo laius suhtena ekraani laiusest */
     padding: 80px; /* Vajadusel muuda */
-    position: fixed;
+  /*  position: fixed;*/
     top: 20vw; /* Logo asukoht ekraani keskel */
     right: -70vw; /* 5% ekraani paremast äärest (muudetud left -> right) */
     transform: translateY(-35vh); /* Vertikaalselt keskjoondatud */
