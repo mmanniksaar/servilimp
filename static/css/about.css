@@ -34,7 +34,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    opacity: 0.9;
+   /*opacity: 0.9;*/
+    opacity: 1.0;
+
     overflow-y: scroll;
     max-height: 85vh; /* Maksimaalne kõrgus, kui sisu on pikem kui see */
   }
@@ -47,8 +49,7 @@
     width: 80%;
     height: 80%; /* Muuda vastavalt soovile */
     border-radius: 50%;
-    opacity: 0.6;
-
+    /*opacity: 0.6;*/
 }
 
 .about-container h1 {

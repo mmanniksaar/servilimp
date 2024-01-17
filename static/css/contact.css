@@ -37,7 +37,8 @@
     width: 98%;
     height: auto;
     text-align: center;
-    opacity: 0.98;
+    /*opacity: 0.98;*/
+    opacity: 1.0;
     overflow-y: scroll;
     max-height: 80vh;
     z-index: 1;

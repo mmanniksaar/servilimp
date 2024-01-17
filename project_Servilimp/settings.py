@@ -1,5 +1,8 @@
 import os
 from pathlib import Path
+import dj_database_url
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -124,6 +127,17 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 #}
 
 
+#if 'DATABASE_URL' in os.environ:
+#    import dj_database_url
+#    DATABASES = {'default': dj_database_url.config()}
+
 if 'DATABASE_URL' in os.environ:
-    import dj_database_url
     DATABASES = {'default': dj_database_url.config()}
+else:
+    # Lokaliseerimiseks (local development) kasutame SQLite'i.
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }

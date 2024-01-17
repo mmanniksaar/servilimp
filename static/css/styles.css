@@ -1,10 +1,10 @@
-@import url(https://db.onlinewebfonts.com/c/a22ece56f337b19152478df32b9c5e1f?family=Sprat+Condensed+Medium);
+/*@import url(https://db.onlinewebfonts.com/c/a22ece56f337b19152478df32b9c5e1f?family=Sprat+Condensed+Medium);*/
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Sprat Condensed Medium';
+    font-family: 'Calibri';
 }
 
 
@@ -65,7 +65,7 @@ nav a {
 .image-section .text {
     font-size: 24px;
     font-weight: bold;
-    font-family: "Sprat Condensed Medium"; 
+    font-family: "Calibri"; 
     padding: 30px; /* Vajadusel muuda */
 
 }

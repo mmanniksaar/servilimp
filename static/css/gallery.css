@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");*/
 
 .video-container {
   display: flex;
@@ -32,7 +32,8 @@
   width: 98%;
   height: auto;
   text-align: center;
-  opacity: 0.9;
+  /*opacity: 0.9;*/
+  opacity: 1.0;
   overflow-y: scroll;
   max-height: 85vh;
   z-index: 1;
