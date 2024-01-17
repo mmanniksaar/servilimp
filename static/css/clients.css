@@ -45,7 +45,7 @@
   opacity: 1.0;
   overflow-y: scroll;
   max-height: 85vh;
-  /* Maksimaalne kõrgus, kui sisu on pikem kui see */
+  z-index: 1;
 }
 
 /* place-items: center;
