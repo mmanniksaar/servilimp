@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funktsioon, mis arvutab animatsiooni alguspunkti sõltuvalt ekraani laiusest
     function calculateStartPosition() {
-        screenWidth = 0;
         const screenWidth = window.innerWidth;
+        console.log(screenWidth);
         const logoWidth = logo.offsetWidth;
         const startPosition = screenWidth + (logoWidth + 5 / 100 * screenWidth); // Muutus siin
         return startPosition;
@@ -39,6 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Kuulake akna suuruse muutusi ja värskendage animatsiooni alguspunkti
     window.addEventListener("resize", function () {
-        gsap.to(logo, { x: -calculateStartPosition() }); // Muutus siin
+        gsap.to(logo, { x: -calculateStartPosition() });
     });
 });
