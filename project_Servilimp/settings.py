@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.gallery',
     'apps.clients',
+    'apps.rental',
     'cloudinary',
 
    # 'axes',

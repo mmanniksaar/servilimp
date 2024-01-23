@@ -70,3 +70,26 @@
 
   border-radius: 1.5rem;*/
 }
+
+.client-container img:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.client-container img:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+
+
+@keyframes show-overflow {
+  to {
+    overflow: visible;
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+

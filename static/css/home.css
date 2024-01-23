@@ -31,7 +31,9 @@
 
 
 
-.choice-container {
+/* .choice-container {
+    display: grid;
+    grid-row: auto auto;
     margin-right: 10vw;
     background-color: #1d1b1b;
     border-radius: 12px;
@@ -40,32 +42,56 @@
     padding-left: 10px;
     padding-right: 30vw;
     padding: 5px;
-    width: 40vw;
-    height: auto;
+    height: 200px;
     position: absolute;
     top: 50%;
     right: 0;
-    /*transform: translate(50%, -50%);*/
-    opacity: 0.9;
+ } */
+ 
+ .choice-container {
+    width: 40vw;
+    right: 6vw;
+    top: 50%;
+    position: absolute;
+    height: 50vh;
+
 }
 
-.choice-button1,
+.choice-container a{
+    color: #cdc2c2;
+    font-size: 1.8vw;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    text-align: center;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+
+.choice-button1 , 
 .choice-button2 {
+    display: flex;
     position: relative;
     text-shadow: 10px 10px 4px rgba(23, 22, 22, 0.8);
-    line-height: 3vh; /* Muudetud vastavalt soovile */
+    line-height: 3vh; 
     color: rgba(255, 255, 255, 0.8);
     transition: background 0.3s;
-    border-radius: 1vh; /* Muudetud vastavalt soovile */
-    font-size: 3vh; /* Muudetud vastavalt soovile */
+    border-radius: 1vh;
+    font-size: 4vh; 
     opacity: 0.9;
     z-index: 1;
-   /* margin-bottom: 1vh;*/
+    border-color: aqua;
+    padding: 10vh;
+    white-space: normal;
+
+
 }
 
 .choice-button1 {
     background-image: url('/static/pictures/button_container_bg2.jpeg');
-    background-size: cover;
+    background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid #0f0f0f;
@@ -74,9 +100,11 @@
     width: 100%;
 }
 
+
+
 .choice-button2 {
     background-image: url('/static/pictures/button_container_bg1.jpeg');
-    background-size: cover;
+    background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid #0f0f0f;

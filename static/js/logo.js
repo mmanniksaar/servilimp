@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("animated-logo");
 
-    // Funktsioon, mis arvutab animatsiooni alguspunkti sõltuvalt ekraani laiusest
     function calculateStartPosition() {
         const screenWidth = window.innerWidth;
         console.log(screenWidth);
@@ -31,13 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     logo.addEventListener("mouseover", rotateLogo);
     logo.addEventListener("mouseout", stopRotation);
 
-    gsap.to(".choice-container", { 
-        duration: 3,
-        y: "-50%",
-        ease: "power2.out"
-    });
-
-    // Kuulake akna suuruse muutusi ja värskendage animatsiooni alguspunkti
     window.addEventListener("resize", function () {
         gsap.to(logo, { x: -calculateStartPosition() });
     });
