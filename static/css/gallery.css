@@ -39,6 +39,11 @@
   z-index: 1;
 }
 
+  /* Peidab gallery-container-i scrollbari*/
+  .gallery-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
 .card__container {
   display: grid;
   row-gap: 3.5rem;

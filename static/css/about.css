@@ -6,11 +6,6 @@
     display: flex;
 }
 
-.cleaning-container {
-    float: right;   
-
-}
-
 .about-video-content {        /*kasutuses*/
     flex: 1; /* Video võtab ülejäänud laiuse */
 }
@@ -22,24 +17,27 @@
 }
 
 .about-container {
-   /* margin-top: 30vw;*/
     background-color: #333;
     padding: 5vw;
-    padding-top: 10vw;
+    padding-top: 3vw;
     border-radius: 1vw;
     width: 98%;
     height: auto;
-    position: absolute;
+    position:absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; 
     transform: translate(-50%, -50%);
     text-align: center;
-   /*opacity: 0.9;*/
-    opacity: 1.0;
-
     overflow-y: scroll;
-    max-height: 85vh; /* Maksimaalne kõrgus, kui sisu on pikem kui see */
+    max-height: 85vh;
+    display:inline-block;
+    z-index: 1;
+
   }
+  /* Peidab about-container-i scrollbari*/
+  .about-container::-webkit-scrollbar {
+    width: 8px; 
+}
 
 .about-text-container a {
     text-decoration: none;

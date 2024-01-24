@@ -3,6 +3,7 @@
     :root {
       --h2-font-size: 1.5rem;
       --small-font-size: .875rem;
+
     }
   }
 
@@ -31,29 +32,18 @@
 
 
 
-/* .choice-container {
-    display: grid;
-    grid-row: auto auto;
-    margin-right: 10vw;
-    background-color: #1d1b1b;
-    border-radius: 12px;
-    padding-top: 50vw;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 30vw;
-    padding: 5px;
-    height: 200px;
-    position: absolute;
-    top: 50%;
-    right: 0;
- } */
+img {
+    display: block !important;
+  }
  
  .choice-container {
+    display: inline;
     width: 40vw;
     right: 6vw;
     top: 50%;
     position: absolute;
     height: 50vh;
+    z-index: 1;
 
 }
 
@@ -70,28 +60,27 @@
 }
 
 
-.choice-button1 , 
+.choice-button1,
 .choice-button2 {
-    display: flex;
+    /* ühised stiilid */
+    display: block; /*flex*/
     position: relative;
     text-shadow: 10px 10px 4px rgba(23, 22, 22, 0.8);
     line-height: 3vh; 
     color: rgba(255, 255, 255, 0.8);
-    transition: background 0.3s;
-    border-radius: 1vh;
+/*     transition: background 0.3s, opacity 0.3s; /* lisage üleminek siia */
+     border-radius: 1vh;
     font-size: 4vh; 
     opacity: 0.9;
     z-index: 1;
     border-color: aqua;
     padding: 10vh;
     white-space: normal;
-
-
 }
 
 .choice-button1 {
     background-image: url('/static/pictures/button_container_bg2.jpeg');
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid #0f0f0f;
@@ -99,12 +88,10 @@
     height: 25vh;
     width: 100%;
 }
-
-
 
 .choice-button2 {
     background-image: url('/static/pictures/button_container_bg1.jpeg');
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid #0f0f0f;
@@ -113,29 +100,18 @@
     width: 100%;
 }
 
-
-  .choice-button1:hover {
+.choice-button1:hover,
+.choice-button2:hover {
     /* Gradient hoveri ajal */
     background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
     /*background: linear-gradient(to bottom right, #00ff00, #0000ff);*/
     opacity: 0.5; /* Lisa muud soovitud stiilielemendid hoveri ajal */
-  }
+}
 
-  .choice-button1:hover {
-      opacity: 1; /* Muudame tekstile esiletoomiseks läbipaistvust tagasi */
-  }
-
-  .choice-button2:hover {
-    /* Gradient hoveri ajal */
-    background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
-    /*background: linear-gradient(to bottom right, #00ff00, #0000ff);*/
-    opacity: 0.5; /* Lisa muud soovitud stiilielemendid hoveri ajal */
-  }
-
-  .choice-button2:hover {
-      opacity: 1; /* Muudame tekstile esiletoomiseks läbipaistvust tagasi */
-  }
-
+.choice-button1:hover,
+.choice-button2:hover {
+    opacity: 1; /* Muudame tekstile esiletoomiseks läbipaistvust tagasi */
+}
 
 .logo-container {
     width: 80vh; /* Logo laius suhtena ekraani laiusest */
@@ -143,8 +119,9 @@
     position: absolute;
     top: 20vw; 
     right: -70vw; 
-    transform: translateY(-35vh); /* Vertikaalselt keskjoondatud */
-
+    transform: translateY(-35vh);
+    z-index: 1;
+ 
 }
 
 .logo-container a {

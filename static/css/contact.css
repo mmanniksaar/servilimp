@@ -35,16 +35,19 @@
    /* padding-top: 2.5vw;*/
     border-radius: 1vw;
     width: 98%;
-    height: auto;
+    height: 85%;
     text-align: center;
     /*opacity: 0.98;*/
     opacity: 1.0;
-    overflow-y: scroll;
-    max-height: 80vh;
+   /*  overflow-y: scroll;
+    max-height: 80vh; */
     z-index: 1;
   }
 
-
+  /* Peidab contact-container-i scrollbari*/
+  .contact-container::-webkit-scrollbar {
+    width: 8px; 
+}
   
 
 

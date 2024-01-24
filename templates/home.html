@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<script type="text/javascript" src="{% static 'js/logo.js' %}"></script> <!--logo-->
-<script type="text/javascript" src="{% static 'js/riseButtons.js' %}"></script> <!--rise buttons-->
-
 <link href="{% static 'css/home.css' %}" type="text/css" rel="stylesheet">
+
+<script type="text/javascript" src="{% static 'js/logo.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/riseButtons.js' %}"></script> 
+
 
 
 <body>
@@ -14,11 +14,8 @@
     <div class="video-container">
 
         <div class="choice-container">
-            <!-- <div class="grid-container"> -->
                 <a href="{% url 'rental' %}" class="choice-button2">TABLEWARE AND WAITSTAFF RENTAL</a>
                 <a href="{% url 'contact' %}" class="choice-button1">CLEANING SERVICE</a>
-<!--             </div>
- -->            
         </div>
 
         <div class="logo-container">
