@@ -3,9 +3,9 @@ from apps.category.models import Category
 from django.urls import reverse
 
 class Product(models.Model):
-    product_name = models.CharField(max_length=200, unique=True)
-    size = models.DecimalField(max_digits=8, decimal_places=2)
-    unit = models.CharField(max_length=200, unique=False)
+    product_name = models.CharField(max_length=200, unique=False, blank=True)
+    size = models.CharField(max_length=50, unique=False, blank=True)
+    unit = models.CharField(max_length=5, unique=False, blank=True)
     slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField(max_length=800, blank=True)
     price = models.DecimalField(max_digits=8, decimal_places=2)
