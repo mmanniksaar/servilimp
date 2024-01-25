@@ -137,12 +137,12 @@ h2 {
 }
 
 img {
-  width: 600px;
-  height: 350px;
+  width: 750px;
+  height: 330px;
   overflow: hidden;
   position: relative;
   padding-top: 2vh;
-  padding-right: 15vw;
+  padding-right: 25vw;
   /* margin-top: 47px; */
 }
 
@@ -189,10 +189,10 @@ img {
 .desc-container {
   /* padding-top: 0.2vh;*/
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 100%;
   top: 33%;
-  /*left: 60%;*/
+  left: 12%;
   overflow-y: scroll;
   max-height: 22vh;
 }
