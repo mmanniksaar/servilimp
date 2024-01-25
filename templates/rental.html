@@ -15,10 +15,11 @@
 
 <!-- <div class="gallery-container">
  -->  <div class="main-container">
-
+	{% if products %}
+    {% for product in products %}
         <div class="card-container">
             <div class="images">
-              <img src="/static/pictures/image6.png" />
+              <img src="{{ product.product_image.url }}" />
             </div>
             <div class="slideshow-buttons">
               <div class="one"></div>
@@ -38,12 +39,12 @@
               <div class="size">12</div>
             </div> -->
             <div class="product">
-              <h1>Attachable Glass Holder</h1>
-              <h1>47 cl</h1>
+              <h1>{{ product.product_name }}</h1>
+              <h1>{{ product.size }} {{ product.unit }}</h1>
         
-              <h2>0,40€ + 24% VAT</h2>
+              <h2>{{ product.price }}€ + 24% VAT</h2>
                   <div class="desc-container">
-                    <p class="desc">The Carat collection is based on a contemporary interpretation of the traditional glass grinding for which Orrefors is world-renowned. The irregular geometry produces beautiful reflections of light in the crystal. Carat Coupe is a glass for sparkling drinks and cocktails. The glass has a wide bowl that allows the drink to breathe, for a more developed aroma. It can also be used for desserts. The stem of the glass is covered with the collection’s characteristic pattern. Designed by Lena Bergström.</p>
+                    <p class="desc">{{ product.description }}</p>
                   </div>
                   <div class="buttons">
                     <button class="add">Add to Cart</button>
@@ -51,166 +52,23 @@
          -->          </div>
             </div>
           </div>
+          {% endfor %}
+          {% else %}
+            <div class="text-center">
+              <h2> No items found. </h2>
+              <hr>
+              <br>
+              <a href="{% url 'rental' %}" class="btn btn-primary" style="background-color:#482809"; >Continue shopping</a>
+            </div>
         
-          <div class="card-container">
-            <div class="images">
-              <img src="/static/pictures/image6.png" />
-            </div>
-            <div class="slideshow-buttons">
-              <div class="one"></div>
-              <div class="two"></div>
-              <div class="three"></div>
-              <div class="four"></div>
-            </div>
-         <!--   <p class="pick">choose size</p>
-             <div class="sizes">
-              <div class="size">5</div>
-              <div class="size">6</div>
-              <div class="size">7</div>
-              <div class="size">8</div>
-              <div class="size">9</div>
-              <div class="size">10</div>
-              <div class="size">11</div>
-              <div class="size">12</div>
-            </div> -->
-            <div class="product">
-              <h1>Attachable Glass Holder</h1>
-              <h1>47 cl</h1>
-        
-              <h2>0,40€ + 24% VAT</h2>
-                  <div class="desc-container">
-                    <p class="desc">The Carat collection is based on a contemporary interpretation of the traditional glass grinding for which Orrefors is world-renowned. The irregular geometry produces beautiful reflections of light in the crystal. Carat Coupe is a glass for sparkling drinks and cocktails. The glass has a wide bowl that allows the drink to breathe, for a more developed aroma. It can also be used for desserts. The stem of the glass is covered with the collection’s characteristic pattern. Designed by Lena Bergström.</p>
-                  </div>
-                  <div class="buttons">
-                    <button class="add">Add to Cart</button>
-        <!--             <button class="like"><span>♥</span></button>
-         -->          </div>
-            </div>
-          </div>
-
-          <div class="card-container">
-            <div class="images">
-              <img src="/static/pictures/image6.png" />
-            </div>
-            <div class="slideshow-buttons">
-              <div class="one"></div>
-              <div class="two"></div>
-              <div class="three"></div>
-              <div class="four"></div>
-            </div>
-         <!--   <p class="pick">choose size</p>
-             <div class="sizes">
-              <div class="size">5</div>
-              <div class="size">6</div>
-              <div class="size">7</div>
-              <div class="size">8</div>
-              <div class="size">9</div>
-              <div class="size">10</div>
-              <div class="size">11</div>
-              <div class="size">12</div>
-            </div> -->
-            <div class="product">
-              <h1>Attachable Glass Holder</h1>
-              <h1>47 cl</h1>
-        
-              <h2>0,40€ + 24% VAT</h2>
-                  <div class="desc-container">
-                    <p class="desc">The Carat collection is based on a contemporary interpretation of the traditional glass grinding for which Orrefors is world-renowned. The irregular geometry produces beautiful reflections of light in the crystal. Carat Coupe is a glass for sparkling drinks and cocktails. The glass has a wide bowl that allows the drink to breathe, for a more developed aroma. It can also be used for desserts. The stem of the glass is covered with the collection’s characteristic pattern. Designed by Lena Bergström.</p>
-                  </div>
-                  <div class="buttons">
-                    <button class="add">Add to Cart</button>
-        <!--             <button class="like"><span>♥</span></button>
-         -->          </div>
-            </div>
-          </div>
-
-          <div class="card-container">
-            <div class="images">
-              <img src="/static/pictures/image6.png" />
-            </div>
-            <div class="slideshow-buttons">
-              <div class="one"></div>
-              <div class="two"></div>
-              <div class="three"></div>
-              <div class="four"></div>
-            </div>
-         <!--   <p class="pick">choose size</p>
-             <div class="sizes">
-              <div class="size">5</div>
-              <div class="size">6</div>
-              <div class="size">7</div>
-              <div class="size">8</div>
-              <div class="size">9</div>
-              <div class="size">10</div>
-              <div class="size">11</div>
-              <div class="size">12</div>
-            </div> -->
-            <div class="product">
-              <h1>Attachable Glass Holder</h1>
-              <h1>47 cl</h1>
-        
-              <h2>0,40€ + 24% VAT</h2>
-                  <div class="desc-container">
-                    <p class="desc">The Carat collection is based on a contemporary interpretation of the traditional glass grinding for which Orrefors is world-renowned. The irregular geometry produces beautiful reflections of light in the crystal. Carat Coupe is a glass for sparkling drinks and cocktails. The glass has a wide bowl that allows the drink to breathe, for a more developed aroma. It can also be used for desserts. The stem of the glass is covered with the collection’s characteristic pattern. Designed by Lena Bergström.</p>
-                  </div>
-                  <div class="buttons">
-                    <button class="add">Add to Cart</button>
-        <!--             <button class="like"><span>♥</span></button>
-         -->          </div>
-            </div>
-          </div>
-
-          <div class="card-container">
-            <div class="images">
-              <img src="/static/pictures/image6.png" />
-            </div>
-            <div class="slideshow-buttons">
-              <div class="one"></div>
-              <div class="two"></div>
-              <div class="three"></div>
-              <div class="four"></div>
-            </div>
-         <!--   <p class="pick">choose size</p>
-             <div class="sizes">
-              <div class="size">5</div>
-              <div class="size">6</div>
-              <div class="size">7</div>
-              <div class="size">8</div>
-              <div class="size">9</div>
-              <div class="size">10</div>
-              <div class="size">11</div>
-              <div class="size">12</div>
-            </div> -->
-            <div class="product">
-              <h1>Attachable Glass Holder</h1>
-              <h1>47 cl</h1>
-        
-              <h2>0,40€ + 24% VAT</h2>
-                  <div class="desc-container">
-                    <p class="desc">The Carat collection is based on a contemporary interpretation of the traditional glass grinding for which Orrefors is world-renowned. The irregular geometry produces beautiful reflections of light in the crystal. Carat Coupe is a glass for sparkling drinks and cocktails. The glass has a wide bowl that allows the drink to breathe, for a more developed aroma. It can also be used for desserts. The stem of the glass is covered with the collection’s characteristic pattern. Designed by Lena Bergström.</p>
-                  </div>
-                  <div class="buttons">
-                    <button class="add">Add to Cart</button>
-        <!--             <button class="like"><span>♥</span></button>
-         -->          </div>
-            </div>
-          </div>
-        
-        
+          {% endif %}
  
   </div>
   <aside>
     <ul>
-        <li><a href="#">Glases</a></li>
-        <li><a href="#">Plates</a></li>
-        <li><a href="#">Utensils and Cutlery</a></li>
-        <li><a href="#">Cup sets for Cofee and Tea</a></li>
-        <li><a href="#">Bowls and Trays For Serving</a></li>
-        <li><a href="{% url 'contact' %}">Thermos</a></li>
-        <li><a href="#">Cooler, Trays and Spittoon</a></li>
-        <li><a href="#">Food Heating</a></li>
-        <li><a href="#">Tables for Events</a></li>
-        <li><a href="#">Delivery and Pickup</a></li>
+      {% for category in links %}
+          <li><a href="{{ category.get_url}}">{{ category.category_name }}</a></li>
+      {% endfor %}
     </ul>            
 </aside>
 {% endblock %}

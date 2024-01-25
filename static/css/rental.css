@@ -10,7 +10,6 @@ body {
   /*margin: 20px;*/
   /*background: $my;*/
   font-family: "Lato", sans-serif, sans-serif;
-  /* text-transform: uppercase;*/
 }
 
 .main-container {
@@ -36,6 +35,11 @@ body {
   opacity: 1;
   overflow-y: scroll;
   max-height: 85vh;
+}
+
+  /* Peidab contact-container-i scrollbari*/
+  .main-container::-webkit-scrollbar {
+    width: 8px; 
 }
 
 aside {
@@ -110,16 +114,20 @@ aside a {
   margin-bottom: 0.3vh;
 }
 
+
+
+
 p {
   font-size: 0.8em;
   color: #BA7E7E;
   letter-spacing: 1px;
 }
 
-h1 {
+h1{
   font-size: 1.2em;
   color: #4E4E4E;
   margin-top: -5px;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -176,6 +184,7 @@ img {
   /*overflow-y: scroll;*/
   /* max-height: 85vh;*/
 }
+
 
 .desc-container {
   /* padding-top: 0.2vh;*/

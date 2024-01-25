@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'apps.gallery',
     'apps.clients',
     'apps.rental',
+    'apps.category',
     'cloudinary',
 
    # 'axes',
@@ -54,6 +55,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.category.context_processors.menu_links', #now context_processors is available in all templates
             ],
         },
     },
