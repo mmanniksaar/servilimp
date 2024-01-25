@@ -121,18 +121,19 @@ img {
     right: -70vw; 
     transform: translateY(-35vh);
     z-index: 1;
- 
+
 }
 
 .logo-container a {
     text-decoration: none;
+
 }
 
 .logo-container img {
     width: 80%; /* Aseta laius 100%, et täita ülemist konteinerit */
     height: 80%; /* Hoia pildi suhe */
     border-radius: 50%;
-    opacity: 1.0;
+
 }
 
 
