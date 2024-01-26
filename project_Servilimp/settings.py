@@ -110,7 +110,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
-
+DEFENDER_LOGIN_FAILURE_LIMIT = 3
+DEFENDER_COOLOFF_TIME = 180  # 3 minutes
+#DEFENDER_LOCKOUT_TEMPLATE = 'path/to/lockout_template.html'
 
 
 STATIC_URL = '/static/'
