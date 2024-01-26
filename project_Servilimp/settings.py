@@ -69,10 +69,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project_Servilimp.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+redis_url = urlparse(os.environ.get('REDISCLOUD_URL'))
 
-
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f'redis://{redis_url.hostname}:{redis_url.port}/1',
+        'OPTIONS': {
+            'PASSWORD': redis_url.password,
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -106,12 +114,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Heroku provides Redis URL in REDIS_URL environment variable
-REDIS_URL = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+
+# Heroku provides Redis URL in REDISCLOUD_URL environment variable
+REDIS_URL = os.getenv('REDISCLOUD_URL', 'redis://localhost:6379/0')
 redis_instance = redis.from_url(REDIS_URL)
 
-AXES_REDIS_URL = REDIS_URL
-DEFENDER_REDIS_URL = REDIS_URL  
+
+AXES_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/1'
+DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2'
+
 
 
 AUTHENTICATION_BACKENDS = [
