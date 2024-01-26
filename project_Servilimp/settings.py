@@ -89,7 +89,7 @@ CACHES = {
     }
 }
 
-AXES_REDIS_URL = REDIS_URL + '/1'
+AXES_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/1' if os.getenv('REDISCLOUD_URL') else None
 DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2' if os.getenv('REDISCLOUD_URL') else None
 
 
