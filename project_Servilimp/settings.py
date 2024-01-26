@@ -69,15 +69,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project_Servilimp.wsgi.application'
 
 
-redis_url = urlparse(os.environ.get('REDISCLOUD_URL'))
+redis_url = urlparse.urlparse(os.environ.get('REDISCLOUD_URL'))
 
 CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': f'redis://{redis_url.hostname}:{redis_url.port}/1',
-        'OPTIONS': {
-            'PASSWORD': redis_url.password,
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        'default': {
+            'BACKEND': 'redis_cache.RedisCache',
+            'LOCATION': '%s:%s' % (redis_url.hostname, redis_url.port),
+            'OPTIONS': {
+                'PASSWORD': redis_url.password,
+                'DB': 0,
         }
     }
 }
