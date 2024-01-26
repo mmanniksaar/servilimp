@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'axes',
-    'defender',
+    #'defender',
 ]
 
 MIDDLEWARE = [
@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'defender.middleware.FailedLoginMiddleware',
+   # 'defender.middleware.FailedLoginMiddleware',
     'axes.middleware.AxesMiddleware',
 ]
 
