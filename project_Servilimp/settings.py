@@ -69,18 +69,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project_Servilimp.wsgi.application'
 
 
-redis_url = urlparse(os.environ.get('REDISCLOUD_URL'))
+
+
+if os.environ.get('DJANGO_ENV') == 'production':
+    REDIS_URL = os.environ.get('REDISCLOUD_URL_REMOTE')
+else:
+    REDIS_URL = os.environ.get('REDISCLOUD_URL_LOCAL')
+
+redis_url = urlparse(REDIS_URL)
 
 CACHES = {
-        'default': {
-            'BACKEND': 'redis_cache.RedisCache',
-            'LOCATION': '%s:%s' % (redis_url.hostname, redis_url.port),
-            'OPTIONS': {
-                'PASSWORD': redis_url.password,
-                'DB': 0,
+    'default': {
+        'BACKEND': 'redis_cache.RedisCache',
+        'LOCATION': '%s:%s' % (redis_url.hostname, redis_url.port),
+        'OPTIONS': {
+            'PASSWORD': redis_url.password,
+            'DB': 0,
         }
     }
 }
+
+AXES_REDIS_URL = REDIS_URL + '/1'
+DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2' if os.getenv('REDISCLOUD_URL') else None
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -116,8 +128,8 @@ USE_TZ = True
 
 
 
-AXES_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/1'
-DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2'
+#AXES_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/1'
+#DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2'
 
 
 
