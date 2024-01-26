@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 import dj_database_url
+import redis
+from urllib.parse import urlparse
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -104,8 +106,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-AXES_REDIS_URL = 'redis://localhost:6379/1'  
-DEFENDER_REDIS_URL = 'redis://localhost:6379/2'  
+# Heroku provides Redis URL in REDIS_URL environment variable
+REDIS_URL = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+redis_instance = redis.from_url(REDIS_URL)
+
+AXES_REDIS_URL = REDIS_URL
+DEFENDER_REDIS_URL = REDIS_URL  
 
 
 AUTHENTICATION_BACKENDS = [
