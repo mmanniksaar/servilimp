@@ -69,7 +69,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project_Servilimp.wsgi.application'
 
 
-redis_url = urlparse.urlparse(os.environ.get('REDISCLOUD_URL'))
+redis_url = urlparse(os.environ.get('REDISCLOUD_URL'))
 
 CACHES = {
         'default': {
