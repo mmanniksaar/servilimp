@@ -104,6 +104,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+AXES_REDIS_URL = 'redis://localhost:6379/1'  
+DEFENDER_REDIS_URL = 'redis://localhost:6379/2'  
+
+
 AUTHENTICATION_BACKENDS = [
     'axes.backends.AxesStandaloneBackend',
     'django.contrib.auth.backends.ModelBackend',
