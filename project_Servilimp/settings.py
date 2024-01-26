@@ -71,37 +71,37 @@ WSGI_APPLICATION = 'project_Servilimp.wsgi.application'
 
 
 
-if os.environ.get('DJANGO_ENV') == 'production':
-    REDIS_URL = os.environ.get('REDISCLOUD_URL_REMOTE')
-else:
-    REDIS_URL = os.environ.get('REDISCLOUD_URL_LOCAL')
+# if os.environ.get('DJANGO_ENV') == 'production':
+#     REDIS_URL = os.environ.get('REDISCLOUD_URL_REMOTE')
+# else:
+#     REDIS_URL = os.environ.get('REDISCLOUD_URL_LOCAL')
 
-redis_url = urlparse(REDIS_URL) if REDIS_URL else None
+# redis_url = urlparse(REDIS_URL) if REDIS_URL else None
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': '',
-        'OPTIONS': {
-            'MAX_ENTRIES': 1000
-        }
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#         'LOCATION': '',
+#         'OPTIONS': {
+#             'MAX_ENTRIES': 1000
+#         }
+#     }
+# }
 
-if redis_url:
-    CACHES['default'] = {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': f"redis://{redis_url.hostname}:{redis_url.port}/0",
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            'PASSWORD': redis_url.password,
-            'SOCKET_CONNECT_TIMEOUT': 5,  # in seconds
-            'SOCKET_TIMEOUT': 5,  # in seconds
-        }
-    }
+# if redis_url:
+#     CACHES['default'] = {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': f"redis://{redis_url.hostname}:{redis_url.port}/0",
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#             'PASSWORD': redis_url.password,
+#             'SOCKET_CONNECT_TIMEOUT': 5,  # in seconds
+#             'SOCKET_TIMEOUT': 5,  # in seconds
+#         }
+#     }
 
-AXES_REDIS_URL = f"{REDIS_URL}/1" if REDIS_URL else None
-DEFENDER_REDIS_URL = f"{REDIS_URL}/2" if REDIS_URL else None
+#AXES_REDIS_URL = f"{REDIS_URL}/1" if REDIS_URL else None
+#DEFENDER_REDIS_URL = f"{REDIS_URL}/2" if REDIS_URL else None
 
 
 # Password validation
