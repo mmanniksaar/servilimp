@@ -76,20 +76,21 @@ if os.environ.get('DJANGO_ENV') == 'production':
 else:
     REDIS_URL = os.environ.get('REDISCLOUD_URL_LOCAL')
 
-redis_url = urlparse(REDIS_URL)
+redis_url = urlparse(REDIS_URL) if REDIS_URL else None
 
 CACHES = {
     'default': {
         'BACKEND': 'redis_cache.RedisCache',
-        'LOCATION': '%s:%s' % (redis_url.hostname, redis_url.port),
+        'LOCATION': f"{redis_url.hostname}:{redis_url.port}" if redis_url else None,
         'OPTIONS': {
-            'PASSWORD': redis_url.password,
+            'PASSWORD': redis_url.password if redis_url else None,
             'DB': 0,
         }
     }
 }
-AXES_REDIS_URL = REDIS_URL + '/1' if REDIS_URL else None
-DEFENDER_REDIS_URL = REDIS_URL + '/2' if REDIS_URL else None
+
+AXES_REDIS_URL = f"{REDIS_URL}/1" if REDIS_URL else None
+DEFENDER_REDIS_URL = f"{REDIS_URL}/2" if REDIS_URL else None
 
 
 # Password validation
