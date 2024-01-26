@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1','servilimp-3a5ad048a799.herokuapp.com']
+ALLOWED_HOSTS = ['www.servilimp.fi', '127.0.0.1','servilimp-3a5ad048a799.herokuapp.com']
 
 
 INSTALLED_APPS = [
@@ -26,9 +26,9 @@ INSTALLED_APPS = [
     'apps.rental',
     'apps.category',
     'cloudinary',
-
-   # 'axes',
-   # 'defender',
+    'crispy_forms',
+    'axes',
+    'defender',
 ]
 
 MIDDLEWARE = [
@@ -40,6 +40,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'defender.middleware.FailedLoginMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'project_Servilimp.urls'
@@ -101,6 +104,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesStandaloneBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'project_Servilimp/static')
@@ -121,18 +132,12 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+EMAIL_HOST = os.environ.get('EMAIL_HOST_NAME')
+EMAIL_PORT = os.environ.get('EMAIL_PORT_NUMBER')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER_EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PWD')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS_STATE')
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
-
-#if 'DATABASE_URL' in os.environ:
-#    import dj_database_url
-#    DATABASES = {'default': dj_database_url.config()}
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {'default': dj_database_url.config()}
