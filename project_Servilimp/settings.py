@@ -116,12 +116,12 @@ USE_TZ = True
 
 
 # Heroku provides Redis URL in REDISCLOUD_URL environment variable
-REDIS_URL = os.getenv('REDISCLOUD_URL', 'redis://localhost:6379/0')
-redis_instance = redis.from_url(REDIS_URL)
+#REDIS_URL = os.getenv('REDISCLOUD_URL', 'redis://localhost:6379/0')
+#redis_instance = redis.from_url(REDIS_URL)
 
 
-AXES_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/1'
-DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2'
+#AXES_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/1'
+#DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2'
 
 
 
