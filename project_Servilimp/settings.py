@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'apps.category',
     'cloudinary',
     'crispy_forms',
-    'axes',
+    #'axes',
     #'defender',
 ]
 
@@ -43,8 +43,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-   # 'defender.middleware.FailedLoginMiddleware',
-    'axes.middleware.AxesMiddleware',
+    #'defender.middleware.FailedLoginMiddleware',
+    #'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'project_Servilimp.urls'
@@ -128,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Helsinki'
 
 USE_I18N = True
 
@@ -143,14 +143,25 @@ USE_TZ = True
 
 
 
-AUTHENTICATION_BACKENDS = [
-    'axes.backends.AxesStandaloneBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
+# AUTHENTICATION_BACKENDS = [
+#      'axes.backends.AxesStandaloneBackend',
+#      'django.contrib.auth.backends.ModelBackend',
+#  ]
+
+# AXES_ENABLED = True
+# AXES_FAILURE_LIMIT = 3
+# AXES_COOLOFF_TIME = 10
+# AXES_VERBOSE = True
+# AXES_LOCK_OUT_BY_USER_AND_IP = False
+# AXES_IP_WHITELIST = '127.0.0.1'
+
+#AXES_LOCKOUT_TEMPLATE = 'axes/lockout.html'
 
 
-#DEFENDER_LOGIN_FAILURE_LIMIT = 3
-#DEFENDER_COOLOFF_TIME = 180  # 3 minutes
+#DEFENDER_LOGIN_FAILURE_LIMIT = 10
+#DEFENDER_COOLOFF_TIME = 0  # 3 minutes
+#DEFENDER_DISABLE_IP_LOCKOUT = False
+#DEFENDER_DISABLE_USERNAME_LOCKOUT = False
 #DEFENDER_LOCKOUT_TEMPLATE = 'path/to/lockout_template.html'
 
 
