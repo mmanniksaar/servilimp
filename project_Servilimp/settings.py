@@ -80,14 +80,25 @@ redis_url = urlparse(REDIS_URL) if REDIS_URL else None
 
 CACHES = {
     'default': {
-        'BACKEND': 'redis_cache.RedisCache',
-        'LOCATION': f"{redis_url.hostname}:{redis_url.port}" if redis_url else None,
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': '',
         'OPTIONS': {
-            'PASSWORD': redis_url.password if redis_url else None,
-            'DB': 0,
+            'MAX_ENTRIES': 1000
         }
     }
 }
+
+if redis_url:
+    CACHES['default'] = {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f"redis://{redis_url.hostname}:{redis_url.port}/0",
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'PASSWORD': redis_url.password,
+            'SOCKET_CONNECT_TIMEOUT': 5,  # in seconds
+            'SOCKET_TIMEOUT': 5,  # in seconds
+        }
+    }
 
 AXES_REDIS_URL = f"{REDIS_URL}/1" if REDIS_URL else None
 DEFENDER_REDIS_URL = f"{REDIS_URL}/2" if REDIS_URL else None
