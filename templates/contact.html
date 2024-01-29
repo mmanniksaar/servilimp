@@ -11,13 +11,17 @@
         <div class="contact-info">
             <h1 class="title">Manager and Owner</h1>
             <p class="name">Mr. Carlos Bravo</p>
-            <p>Website: <a href="http://www.servilimp.fi" target="_blank">www.servilimp.fi</a></p>
-            <p>Phone: 050 323 6847</p>
-            <p>Email: <a href="mailto:servlimp2001@gmail.com">servlimp2001@gmail.com</a></p>
+            <p>Phone: +358 50 323 6847</p>
+            <img src="{% static 'pictures/team.jpeg' %}" alt="">
         </div>
+
+
         <div class="form-container">
+
             <form action="{% url 'contact' %}" method="POST">
               {% csrf_token %}
+              <h1>How can we help you?</h1>
+              <hr>
               <label for="fname">Your Name</label>
               <input type="text" id="fname" name="name" placeholder="Your name..">
           

@@ -20,27 +20,26 @@
 .contact-container {
     display: flex;
     flex: 1;
+    position: absolute;
     background-color: #333;
     background: linear-gradient(to bottom right, #333, #958686);
     flex-wrap: wrap; /* Vajadusel lähevad järgmised elemendid uuele reale */
-
-
     align-items: flex-start;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 0.1vw;
-    padding: 5vw;
+    padding: 3vw;
    /* padding-top: 2.5vw;*/
     border-radius: 1vw;
-    width: 98%;
-    height: 85%;
+    width: auto;
+    height: auto;
+    max-width: 98%; 
+    max-height: 85%; 
+    width: 75%; 
+    height: 80%;
     text-align: center;
-    /*opacity: 0.98;*/
-    opacity: 1.0;
-   /*  overflow-y: scroll;
-    max-height: 80vh; */
     z-index: 1;
   }
 
@@ -52,75 +51,62 @@
 
 
   .contact-info{
-    padding: 3vw;
-   /* display: flex;*/
+    padding: 0.2vw;
     flex: 1;
-    flex-wrap: wrap; /* Vajadusel lähevad järgmised elemendid uuele reale */
+    flex-wrap: wrap;
     z-index: 1;
     color: #fff;
     text-align: left;
+    max-width: 60%; 
+    max-height: 75%; 
+    width: auto; 
+    height: auto; 
+    position: relative;
 
- 
   }
 
   .contact-info h1{
-    padding: 1vw;
-
+    padding: 0.2vw;
     font-size: 2vw;
     color: #fff;
   }
 
   .contact-info p{
-    padding: 1vw;
-
+    padding: 0.2vw;
+    height: auto;
+    max-height: 85%;
     font-size: 2vw;
     color: #fff;
   }
 
   .contact-info a{
-    padding: 1vw;
+    padding: 0.5vw;
     font-family: 'Arial';
     font-size: 2vw;
     color: #afd26c;
   }
 
-  input[type=text], select, textarea {
-    font-size: 1.2vw;
-    font-family: 'Arial';
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 0.5vw;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+  .contact-info img {
+    max-width: 60%; 
+    max-height: 35%; 
+    width: auto; 
+    height: auto; 
+    overflow: hidden;
   }
   
-  input[type=submit] {
-    font-size: 1.5vw;
-    background-color: #023629;
-    color: white;
-    width: 8vw;
-    height: 4vw;
-    border-radius: 6vw;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    font-size: 1.5vw;
-    background-color: #45a049;
-  }
-
  .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    padding: 1vw;
-    flex: 1;
-    flex-wrap: wrap; 
-    z-index: 1;
+  padding: 1%;
+  flex: 1;
+  flex-wrap: wrap;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  max-width: 60%; 
+  max-height: 75%; 
+  width: auto; 
+  height: auto;
+  display: block;
+
 }
 
 .form-container label{
@@ -129,3 +115,37 @@
     color: #fff;
 }
 
+.form-container h1{
+    font-size: 2vw;
+    color: #fff;
+}
+
+.form-container input[type=text], select, textarea {
+  font-size: 1.2vw;
+  font-family: 'Arial';
+  width: 100%;
+  height: 75%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 0.5vw;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.form-container input[type=submit] {
+  font-size: 1.5vw;
+  background-color: #023629;
+  color: white;
+  width: 8vw;
+  height: 4vw;
+  border-radius: 6vw;
+  border: none;
+  cursor: pointer;
+}
+
+.form-container input[type=submit]:hover {
+  font-size: 1.5vw;
+  background-color: #45a049;
+}
