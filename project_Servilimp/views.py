@@ -23,12 +23,17 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            s = 'Welcome to My Site'
+            s = 'Servilimp nettisivu'
             name = strip_tags(form.cleaned_data['name'])
             message = render_to_string('email_template.html', {'name': form.cleaned_data['name'], 'email': form.cleaned_data['email'], 'subject': form.cleaned_data['subject']})
             from_email = form.cleaned_data['email']
             to_email = 'onlinestorez700@gmail.com'  # Muutke see vastavalt oma vajadustele
-            send_mail(name, message, from_email, [to_email], html_message=message)
+            #send_mail(name, message, from_email, [to_email], html_message=message)
+            
+            send_mail(s, message, from_email, [to_email], html_message=message, fail_silently=False,)
+            
+            
+            
             return render(request, 'email_send_success.html')
 
     else:
