@@ -218,7 +218,7 @@ img {
   text-align: justify;
 }
 
-button {
+/* a {
   background: #cda9ac;
   padding: 10px;
   margin-top: 150vh;
@@ -232,16 +232,38 @@ button {
   color: #F5F5F5;
   cursor: pointer;
 }
-button:hover {
+ */
+
+.add {
+  width: 67%;
+  background: #cda9ac;
+  padding: 10px;
+  margin-top: 150vh;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: -1px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #F5F5F5;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+.add a{
+  color: #F5F5F5;
+
+}
+
+.add:hover {
   background: #BA7E7E;
   transition: all 0.4s ease-in-out;
 }
 
-.add {
-  width: 67%;
-}
-
 .like {
+  font-size: 32px;
   width: 22%;
 }
 
