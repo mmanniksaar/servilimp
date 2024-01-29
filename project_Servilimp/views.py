@@ -23,6 +23,7 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
+            s = 'Welcome to My Site'
             name = strip_tags(form.cleaned_data['name'])
             message = render_to_string('email_template.html', {'name': form.cleaned_data['name'], 'email': form.cleaned_data['email'], 'subject': form.cleaned_data['subject']})
             from_email = form.cleaned_data['email']
@@ -32,8 +33,6 @@ def contact_view(request):
 
     else:
         form = ContactForm()
-
-    return render(request, 'contact.html', {'form': form})
 
     return render(request, 'contact.html', {'form': form})
 
