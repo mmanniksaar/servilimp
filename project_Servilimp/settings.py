@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'apps.clients',
     'apps.rental',
     'apps.category',
+    'apps.about',
     'cloudinary',
     'crispy_forms',
     #'axes',

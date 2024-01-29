@@ -6,37 +6,23 @@
  
 
  <link href="{% static 'css/about.css' %}" type="text/css" rel="stylesheet">
- 
+
+         {% for about in about_items %}
                 <div class="about-video-container">
                     <div class="about-container">
-                        <h1 id="animated_first">We afford you the liberty to savor the company of your guests, unburdened by concerns and accompanied by a distinctive touch of elegance. Should your guests be pleasantly surprised and your satisfaction ensured, it mirrors our own fulfillment.</h2>
+                        <h1 id="animated_first">{{ about.first_txt}}</h2>
                             <br>
                             <hr>
                             <br>
 
-                        <h2 id="animated_second">Mission</h2>
-                        <p id="animated_second">
-          Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
-          "With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!"
-          Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
-          "With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
-          Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
-          "With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
-          Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
-          "With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
-          Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
-          "With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
-          Our mission is to consistently deliver satisfaction to our esteemed clients. We achieve this by maintaining the cleanliness of their offices and homes in their daily lives and providing impeccable service during their significant events. Our offerings include proficient waitstaff, premium dining furniture, exquisite tableware, and turnkey service solutions—all infused with a distinct touch of elegance.
-          "With your vision aligned with our extensive experience, we are committed to crafting enduring memories for you!
-                        </p>
+                        <h2 id="animated_second">{{ about.second_txt}}</h2>
+                        <p id="animated_second"> {{ about.third_txt}}</p>
                         <br>
                         <hr>
                         <br>
 
-                        <h2 id="animated_third">VISION STATEMENT</h2>
-                            <p id="animated_third">
-                                Our vision is to perpetuate our standing as the embodiment of elegance, efficiency, and, above all, trust. Through this commitment, we aspire to expand our presence across diverse sectors. At all times, our client remains the focal point of our endeavors, reinforcing our dedication to exceptional service.
-                            </p>
+                        <h2 id="animated_third">{{ about.fourth_txt}}</h2>
+                            <p id="animated_third">{{ about.fifth_txt}}</p>
                     </div>
                     
                 <div class="about-video-content">
@@ -46,7 +32,7 @@
                     </video>
                 </div>
             </div>
-
+        {% endfor %}
 
     
 <!--     <script>
