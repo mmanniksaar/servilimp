@@ -3,12 +3,13 @@
 {% block content %}
 
 <link href="{% static 'css/clients.css' %}" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="{% static 'js/clients_zoom.js' %}"></script> <!--modal-->
 
 <div class="video-container">
   <div class="client-container">
     {% if clients_items %}
     {% for client_item in clients_items %}
-            <img src="{{ client_item.client_logo.url }}" alt="">
+            <img src="{{ client_item.client_logo.url }}" alt="" data-client-image-src="{{ client_item.client_image.url }}">
     {% endfor %}
     {% else %}
     <div class="text-center">
@@ -26,5 +27,17 @@
       </video>
   </div>
 </div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal Content (The Image) -->
+	<img class="modal-content" id="img01">
+
+	<!-- Modal Caption (Image Text) -->
+	<div id="caption"></div>
+</div>
+
 
 {% endblock %}
