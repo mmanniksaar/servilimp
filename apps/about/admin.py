@@ -18,8 +18,8 @@ class AboutAdmin(admin.ModelAdmin):
 
     custom_row_view.short_description = 'About View'
 
-"""     def has_add_permission(self, request):
+    def has_add_permission(self, request):
         # Keelame "Add" nupu
-        return False """
+        return False 
     
 admin.site.register(About, AboutAdmin)
