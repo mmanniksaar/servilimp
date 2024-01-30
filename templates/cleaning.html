@@ -7,10 +7,52 @@
 
  <link href="{% static 'css/about.css' %}" type="text/css" rel="stylesheet">
 
+<style>
+.cleaning-txt {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "text image";
+    width: 100%;
+    margin: 20px;
+    text-align: justify;
+}
+
+.cleaning-txt p {
+    grid-area: text;
+    width: 90%;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.cleaning-txt img {
+    padding: 20px;
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+}
+
+.blurry-image {
+    filter: blur(0px);
+}
+</style>
+
+
                 <div class="about-video-container">
                     <div class="about-container">
                         <h1>Cleaning services</h1>
-                    </div>
+
+                        <div class="cleaning-txt">
+                            <p>
+                                Servilimp offers cleaning service for all types of needs, whether for a small apartment or a large residence.
+Imagine entering a fragrant, already clean home after a long day at work. Let us take care of your cleaning needs, so you can enjoy your well earned time off.
+Dismantling of waste containers and if necessary cleaning them, exchange of trash bags Vacuum cleaning and washing the floors Wiping of door handles and circuit breakers Putting the chairs beautifully in front of the workstations Wiping shelves and levels Wiping only empty space of the workstations Ensuring general cleanliness.
+                            </p>
+                            <img src="{% static 'pictures/button_container_bg2.jpeg' %}" class="blurry-image" alt="">
+
+
+                        </div>
+                        </div>
                     
                 <div class="about-video-content">
                     <video autoplay loop muted id="myVideo" width="320" height="180" loading="lazy">
