@@ -9,7 +9,7 @@ from django.conf import settings
 urlpatterns = [
     path('', views.home, name='home'),        # '' tähendab, et tegemist on esilehega- home.html, index.html jne.
    # path('rental/', views.rental, name='rental'), 
-    path('services/', views.services, name='services'),
+    path('cleaning/', views.cleaning, name='cleaning'),
     path('contact/', views.contact_view, name='contact'),
     path('admin/', admin.site.urls),
     #path('admin/defender/', include('defender.urls')),  # defender admin

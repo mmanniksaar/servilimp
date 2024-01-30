@@ -14,8 +14,8 @@ def about(request):
   template = loader.get_template('about.html')
   return HttpResponse(template.render())
 
-def services(request):
-  template = loader.get_template('services.html')
+def cleaning(request):
+  template = loader.get_template('cleaning.html')
   return HttpResponse(template.render())
 
 
