@@ -4,3 +4,5 @@ It also allows users to order various products and services offered by the compa
 
 (Under development)
 https://servilimp-3a5ad048a799.herokuapp.com/
+
+![Alternatiivne tekst](/static/pictures/img_Serv.png)
