@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'apps.about',
     'cloudinary',
     'crispy_forms',
+    'django.contrib.sitemaps',
     #'axes',
     #'defender',
 ]
