@@ -19,12 +19,11 @@ class Gallery(ModelMeta, models.Model):
         return self.description
     
     _metadata = {
-        'name': 'name',
+        'title': 'name',
         'description': 'descripiton',
         'image': 'get_meta_image',
-        'modified_date': 'modified_date',
     }
     
     def get_meta_image(self):
-        if self.image:
-            return self.image.url
+        if self.gallery_image:
+            return self.gallery_image.url

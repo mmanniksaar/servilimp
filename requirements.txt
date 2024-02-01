@@ -26,7 +26,6 @@ django-sekizai==3.0.1
 django-treebeard==4.6.0
 djangocms-admin-style==3.3.0
 djangocms-page-meta==1.4.0
-DjangoSEO==1.0
 gunicorn==21.2.0
 idna==3.6
 importlib-metadata==6.7.0
