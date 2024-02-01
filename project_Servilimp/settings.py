@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.sites',
     'meta',
-    "django_check_seo",
 
     #'axes',
     #'defender',

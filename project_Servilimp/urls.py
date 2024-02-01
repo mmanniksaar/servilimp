@@ -22,8 +22,6 @@ urlpatterns = [
     path('rental/', include('apps.rental.urls')),  
     path('about/', include('apps.about.urls')),        # 'abouts/' abouts.urls suunab faili clients/urls.py
     
-    path("django-check-seo/", include("django_check_seo.urls")),
-    
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap",), # sitemap.xml
  
  
