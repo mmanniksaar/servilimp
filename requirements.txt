@@ -26,7 +26,6 @@ django-sekizai==3.0.1
 django-treebeard==4.6.0
 djangocms-admin-style==3.3.0
 djangocms-page-meta==1.4.0
-easy-thumbnails==2.8.5
 gunicorn==21.2.0
 idna==3.6
 importlib-metadata==6.7.0
@@ -38,7 +37,6 @@ python-decouple==3.8
 python-dotenv==0.21.1
 pytz==2023.3.post1
 redis==3.5.3
-reportlab==4.0.9
 requests==2.31.0
 six==1.16.0
 soupsieve==2.4.1
