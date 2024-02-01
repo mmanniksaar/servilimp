@@ -1,12 +1,40 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load meta %}
+
 {% block content %}
 
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- Kasuta Meta objekti andmeid -->
+  {% if meta.use_facebook %}
+      <!-- Facebook OpenGraph meta andmed -->
+      <meta property="og:title" content="{{ meta.title }}">
+      <meta property="og:description" content="{{ meta.description }}">
+      <meta property="og:image" content="{{ meta.image }}">
+  {% endif %}
+
+  {% if meta.use_twitter %}
+      <!-- Twitter meta andmed -->
+      <meta name="twitter:title" content="{{ meta.title }}">
+      <meta name="twitter:description" content="{{ meta.description }}">
+      <meta name="twitter:image" content="{{ meta.image }}">
+  {% endif %}
+
+
+
+  <title>Gallery</title>
+
+
 <link href="{% static 'css/gallery.css' %}" type="text/css" rel="stylesheet">
 <link href="{% static 'css/zoom.css' %}" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="{% static 'js/gallery_zoom.js' %}"></script> <!--modal-->
 
+
+
+</head>
 <div class="video-container">
 
   <div class="gallery-container">

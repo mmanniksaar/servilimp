@@ -6,12 +6,13 @@ class Category(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(max_length=255, blank=True)
     category_image = models.ImageField(upload_to='category_pictures')
-
+    modified_date = models.DateTimeField(auto_now=True)
+    
     class Meta:
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
-    def get_url(self):
+    def get_absolute_url(self):
         return reverse('products_by_category', args=[self.slug])
 
     def __str__(self):

@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1','servilimp-3a5ad048a799.herokuapp.com']
+ALLOWED_HOSTS = ['testserver', 'servilimp.fi', 'www.servilimp.fi', '127.0.0.1','servilimp-3a5ad048a799.herokuapp.com']
 
 
 INSTALLED_APPS = [
@@ -31,9 +31,18 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'meta',
+    "django_check_seo",
+
     #'axes',
     #'defender',
 ]
+
+SITE_ID = 1
+
+META_SITE_PROTOCOL = "https"
+META_SITE_DOMAIN = "127.0.0.1:8000"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,7 +79,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project_Servilimp.wsgi.application'
 
-
+DJANGO_CHECK_SEO_SETTINGS = {
+    "content_words_number": [300, 600],
+    "internal_links": 1,
+    "external_links": 1,
+    "meta_title_length": [30, 60],
+    "meta_description_length": [50, 160],
+    "keywords_in_first_words": 50,
+    "max_link_depth": 3,
+    "max_url_length": 70,
+}
 
 
 # if os.environ.get('DJANGO_ENV') == 'production':
