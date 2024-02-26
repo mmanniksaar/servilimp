@@ -1,29 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 /* center container in the middle */
+html {
+  display: grid;
+  min-height: 100%;
+}
 
-
-
-.rent_main{
-  display:flex;
-  width: 100%;
-  grid-template-columns: auto auto;
-  z-index: 1;
+body {
+  /*display: absolute;*/
+  /*margin: 20px;*/
+  /*background: $my;*/
+  font-family: "Lato", sans-serif, sans-serif;
+  /* text-transform: uppercase;*/
 }
 
 .main-container {
-  margin-top: 98px;
+  margin-top: 3vw;
+  /*margin-left: 1vw;*/
+  /*margin-right: 1vw;*/
   background: #333;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
-  /*grid-template-columns: auto auto;*/
+  grid-template-columns: auto auto;
   grid-gap: 1vw;
   padding: 1vw;
-  padding-left: 20%;
+  padding-left: 20vw;
   border-radius: 0.4vw;
   width: 95%;
   height: auto;
   position: absolute;
-  top: 42%;
+  top: 44%;
   left: 50%;
   margin-bottom: 3vw;
   transform: translate(-50%, -50%);
@@ -31,34 +35,30 @@
   /*opacity: 0.9;*/
   opacity: 1;
   overflow-y: scroll;
-  overflow-x: hidden;
   max-height: 85vh;
-  z-index: 1;
-}
-
-  /* Peidab main-container-i scrollbari*/
-.main-container::-webkit-scrollbar {
-    width: 8px; 
 }
 
 aside {
-  /*display: inline;*/
-  float: left;
-  position: fixed;
-  margin-top: 5%;
-  left: 1.5%;
+  top: 2.6vw;
+  display: block;
   /*grid-template-columns: auto;*/
-  width: 18%;
+  width: 20%;
+  height: 89.6%;
+  /*   border-style: solid;
+    border-color: royalblue;  */
+  float: right;
+  position: fixed;
+  /*background: $my;*/
+  /*border: 1px solid $light;*/
   border-radius: 1vw;
   padding: 1vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  max-height: 84vh;
-  z-index: 1;
-}
-
-aside::-webkit-scrollbar {
-  width: 8px; 
+  /* padding-right: 20vw;*/
+  /*margin-top: 2vw;*/
+  /*margin-bottom: 2vw;*/
+  /*opacity: 0.9;*/
+  /*opacity: 1.0;*/
+  /*overflow-y: scroll;*/
+  /*max-height: 85vh;*/
 }
 
 aside ul {
@@ -98,7 +98,6 @@ aside a {
   display: grid;
   grid-template-columns: auto auto auto;
   position: relative;
-  float: right;
   /*height: 200px;*/
   /*width: 250px;*/
   /* margin: auto;*/
@@ -110,12 +109,12 @@ aside a {
   border-radius: 0.4vw;
   margin-bottom: 0.3vh;
 }
-/* 
+
 p {
   font-size: 0.8em;
   color: #BA7E7E;
   letter-spacing: 1px;
-} */
+}
 
 h1 {
   font-size: 1.2em;
@@ -130,8 +129,8 @@ h2 {
 }
 
 img {
-  width: 98%;
-  height: 60%;
+  width: auto;
+  height: 300px;
   overflow: hidden;
   position: relative;
   padding-top: 2vh;
@@ -187,10 +186,6 @@ img {
   /*left: 60%;*/
   overflow-y: scroll;
   max-height: 22vh;
-}
-
-.desc-container::-webkit-scrollbar {
-  width: 8px; 
 }
 
 .desc {
@@ -263,3 +258,22 @@ button:hover {
   background: #BA7E7E;
   color: #F5F5F5;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 10px;
+}
+footer p {
+  letter-spacing: 3px;
+}
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #7d7d7d;
+}/*# sourceMappingURL=rental.css.map */

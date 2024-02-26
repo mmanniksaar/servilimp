@@ -1,21 +1,3 @@
-/* .about-video-container {      
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-}
-
-.about-video-content {       
-    flex: 1; 
-}
-
-.about-video-content video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
- */
 .about-container {
     margin-top: 15px; 
     background-color: #333;
@@ -34,7 +16,7 @@
     display:inline-block;
     z-index: 1;
 
-  }
+   }
   /* Peidab about-container-i scrollbari*/
   .about-container::-webkit-scrollbar {
     width: 8px; 

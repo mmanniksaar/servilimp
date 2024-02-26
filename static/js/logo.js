@@ -10,21 +10,20 @@ document.addEventListener("DOMContentLoaded", function () {
         return startPosition;
     }
 
-    gsap.to(logo, {
+/*     gsap.to(logo, {
         duration: 2,
         x: -calculateStartPosition(),
         rotation: 360,
         ease: "power1.inOut",
         onComplete: function () {
-            //console.log("Liikumine ja pöörlemine on lõppenud");
         }
-    });
+    }); */
 
-    function rotateLogo() {
+/*     function rotateLogo() {
         gsap.to(logo, { rotation: "+=360", ease: "power1.inOut" });
-    }
+    } */
 
-    function stopRotation() {
+/*     function stopRotation() {
         gsap.to(logo, { rotation: 0, ease: "power1.inOut" });
     }
 
@@ -34,5 +33,5 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", function () {
         console.log(calculateStartPosition()); 
         gsap.to(logo, { x: -calculateStartPosition() });
-    });
+    }); */
 });
