@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.to(logo, {
         duration: 2,
         x: -calculateStartPosition(),
-        rotation: 350,
+        rotation: 360,
         ease: "power1.inOut",
         onComplete: function () {
             //console.log("Liikumine ja pöörlemine on lõppenud");

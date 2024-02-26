@@ -1,17 +1,13 @@
 footer {
-/*   margin-top: 830px;
-  width: 100%;
-  max-height: 10%;
-  font-size: 0.8em;
-  background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
-  z-index: 1; */
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
+  height: 3vh;
+  background: linear-gradient(to bottom right, #423f3f, #050505);
   color: white;
   text-align: center;
+  opacity: 0.6;
 }
 footer p {
   font-family: 'Arial';
