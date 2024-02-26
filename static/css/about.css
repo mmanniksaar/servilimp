@@ -12,7 +12,7 @@
     text-align: center;
 
     overflow-y: scroll;
-    max-height: 85vh;
+    /*max-height: 85vh;*/
     display:inline-block;
     z-index: 1;
 

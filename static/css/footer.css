@@ -25,3 +25,19 @@ footer a {
 footer a:hover {
   color: #7d7d7d;
 }
+
+@media (min-width: 300px) {
+  footer p{
+    font-size: 7px;
+
+
+  }
+} 
+
+@media (min-width: 768px) {
+  footer p{
+    font-size: 7px;
+
+
+  }
+} 
