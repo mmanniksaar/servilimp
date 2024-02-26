@@ -108,7 +108,7 @@ img {
     top: 20vw; 
     right: -70vw; 
     transform: translateY(-35vh);
-   /* z-index: 1;*/
+    z-index: 1;
 
 }
 
