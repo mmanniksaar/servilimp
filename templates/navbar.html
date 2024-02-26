@@ -1,11 +1,14 @@
 {% load static %}
 
-<link href="{% static 'css/styles.css' %}" type="text/css" rel="stylesheet">
-
+<link href="{% static 'css/navbar.css' %}" type="text/css" rel="stylesheet">
 
 <header>
-    <nav>
-        <ul>
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+        <ul class="menu">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'clients' %}">Our clients</a></li>
@@ -14,4 +17,3 @@
         </ul>
     </nav>
 </header>
-

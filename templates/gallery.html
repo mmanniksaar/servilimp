@@ -1,19 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load meta %}
+
+{% block title %}Gallery{% endblock %}
 
 {% block content %}
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta property="og:title" content="{{ gallery_item.name }}">
-  <meta property="og:description" content="{{ gallery_item.description }}">
-  <meta property="og:image" content="{{ gallery_item.gallery_image.url }}">
-
-  <title>Gallery</title>
-
 
 <link href="{% static 'css/gallery.css' %}" type="text/css" rel="stylesheet">
 <link href="{% static 'css/zoom.css' %}" type="text/css" rel="stylesheet">
@@ -21,11 +11,8 @@
 
 
 
-</head>
-<div class="video-container">
 
-  <div class="gallery-container">
-
+<div class="gallery-container">
 	<div class="card__container">
       {% if gallery_items %}
         {% for gallery_item in gallery_items %}
@@ -49,13 +36,6 @@
       {% endif %}
 	
   </div>
-  <div class="video-content">
-    <video autoplay loop muted width="320" height="180" loading="lazy">
-    <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
-</div>
 
 
 

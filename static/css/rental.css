@@ -1,32 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 /* center container in the middle */
-html {
-  display: grid;
-  min-height: 100%;
-}
 
-body {
-  /*display: absolute;*/
-  /*margin: 20px;*/
-  /*background: $my;*/
-  font-family: "Lato", sans-serif, sans-serif;
+
+
+.rent_main{
+  display:flex;
+  width: 100%;
+  grid-template-columns: auto auto;
+  z-index: 1;
 }
 
 .main-container {
-  margin-top: 3vw;
-  /*margin-left: 1vw;*/
-  /*margin-right: 1vw;*/
+  margin-top: 98px;
   background: #333;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+  /*grid-template-columns: auto auto;*/
   grid-gap: 1vw;
   padding: 1vw;
-  padding-left: 20vw;
+  padding-left: 20%;
   border-radius: 0.4vw;
   width: 95%;
   height: auto;
   position: absolute;
-  top: 44%;
+  top: 42%;
   left: 50%;
   margin-bottom: 3vw;
   transform: translate(-50%, -50%);
@@ -34,35 +31,34 @@ body {
   /*opacity: 0.9;*/
   opacity: 1;
   overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 85vh;
+  z-index: 1;
 }
 
-  /* Peidab contact-container-i scrollbari*/
-  .main-container::-webkit-scrollbar {
+  /* Peidab main-container-i scrollbari*/
+.main-container::-webkit-scrollbar {
     width: 8px; 
 }
 
 aside {
-  top: 2.6vw;
-  display: block;
-  /*grid-template-columns: auto;*/
-  width: 20%;
-  height: 89.6%;
-  /*   border-style: solid;
-    border-color: royalblue;  */
-  float: right;
+  /*display: inline;*/
+  float: left;
   position: fixed;
-  /*background: $my;*/
-  /*border: 1px solid $light;*/
+  margin-top: 5%;
+  left: 1.5%;
+  /*grid-template-columns: auto;*/
+  width: 18%;
   border-radius: 1vw;
   padding: 1vw;
-  /* padding-right: 20vw;*/
-  /*margin-top: 2vw;*/
-  /*margin-bottom: 2vw;*/
-  /*opacity: 0.9;*/
-  /*opacity: 1.0;*/
-  /*overflow-y: scroll;*/
-  /*max-height: 85vh;*/
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 84vh;
+  z-index: 1;
+}
+
+aside::-webkit-scrollbar {
+  width: 8px; 
 }
 
 aside ul {
@@ -84,21 +80,11 @@ aside li {
   padding: 8px 0;
   cursor: pointer;
 }
-
-/* aside li:hover {
+aside li:hover {
   padding: 6%;
   background: #BA7E7E;
   transition: all 0.4s ease-in-out;
   border-radius: 0.5vh;
-} */
-
-aside li:hover {
-  padding: 6%;
-  background: #7b7979;
-  transition: all 0.4s ease-in-out;
-  border-radius: 0.5vh;
-  color: #b11313;
-  
 }
 
 aside a {
@@ -112,6 +98,7 @@ aside a {
   display: grid;
   grid-template-columns: auto auto auto;
   position: relative;
+  float: right;
   /*height: 200px;*/
   /*width: 250px;*/
   /* margin: auto;*/
@@ -123,21 +110,17 @@ aside a {
   border-radius: 0.4vw;
   margin-bottom: 0.3vh;
 }
-
-
-
-
+/* 
 p {
   font-size: 0.8em;
   color: #BA7E7E;
   letter-spacing: 1px;
-}
+} */
 
-h1{
+h1 {
   font-size: 1.2em;
   color: #4E4E4E;
   margin-top: -5px;
-  text-transform: uppercase;
 }
 
 h2 {
@@ -147,12 +130,12 @@ h2 {
 }
 
 img {
-  width: 750px;
-  height: 330px;
+  width: 98%;
+  height: 60%;
   overflow: hidden;
   position: relative;
   padding-top: 2vh;
-  padding-right: 25vw;
+  padding-right: 15vw;
   /* margin-top: 47px; */
 }
 
@@ -195,16 +178,19 @@ img {
   /* max-height: 85vh;*/
 }
 
-
 .desc-container {
   /* padding-top: 0.2vh;*/
   position: absolute;
-  width: 90%;
+  width: 100%;
   height: 100%;
   top: 33%;
-  left: 12%;
+  /*left: 60%;*/
   overflow-y: scroll;
   max-height: 22vh;
+}
+
+.desc-container::-webkit-scrollbar {
+  width: 8px; 
 }
 
 .desc {
@@ -218,7 +204,7 @@ img {
   text-align: justify;
 }
 
-/* a {
+button {
   background: #cda9ac;
   padding: 10px;
   margin-top: 150vh;
@@ -232,38 +218,16 @@ img {
   color: #F5F5F5;
   cursor: pointer;
 }
- */
-
-.add {
-  width: 67%;
-  background: #cda9ac;
-  padding: 10px;
-  margin-top: 150vh;
-  display: inline-block;
-  outline: 0;
-  border: 0;
-  margin: -1px;
-  border-radius: 2px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #F5F5F5;
-  cursor: pointer;
-  text-decoration: none;
-
-}
-
-.add a{
-  color: #F5F5F5;
-
-}
-
-.add:hover {
+button:hover {
   background: #BA7E7E;
   transition: all 0.4s ease-in-out;
 }
 
+.add {
+  width: 67%;
+}
+
 .like {
-  font-size: 32px;
   width: 22%;
 }
 
@@ -299,22 +263,3 @@ img {
   background: #BA7E7E;
   color: #F5F5F5;
 }
-
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  padding: 10px;
-}
-footer p {
-  letter-spacing: 3px;
-}
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-}
-footer a:hover {
-  color: #7d7d7d;
-}/*# sourceMappingURL=rental.css.map */

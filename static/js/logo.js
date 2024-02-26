@@ -3,19 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function calculateStartPosition() {
         const screenWidth = window.innerWidth;
-        console.log(screenWidth);
         const logoWidth = logo.offsetWidth;
         const startPosition = screenWidth + (logoWidth + 5 / 100 * screenWidth); // Muutus siin
+        console.log(startPosition);
+
         return startPosition;
     }
 
     gsap.to(logo, {
         duration: 2,
         x: -calculateStartPosition(),
-        rotation: 360,
+        rotation: 350,
         ease: "power1.inOut",
         onComplete: function () {
-            console.log("Liikumine ja pöörlemine on lõppenud");
+            //console.log("Liikumine ja pöörlemine on lõppenud");
         }
     });
 
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     logo.addEventListener("mouseout", stopRotation);
 
     window.addEventListener("resize", function () {
+        console.log(calculateStartPosition()); 
         gsap.to(logo, { x: -calculateStartPosition() });
     });
 });

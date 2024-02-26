@@ -6,15 +6,13 @@
 <link href="{% static 'css/zoom.css' %}" type="text/css" rel="stylesheet">
 <link href="{% static 'css/rental.css' %}" type="text/css" rel="stylesheet">
 
-<script type="text/javascript" src="{% static 'js/card.js' %}"></script> <!--logo-->
-<script type="text/javascript" src="{% static 'js/zoom.js' %}"></script> <!--modal-->
+<script type="text/javascript" src="{% static 'js/card.js' %}"></script> 
 
 
 
-<div class="video-container">
 
-<!-- <div class="gallery-container">
- -->  <div class="main-container">
+<div class="rent_main">
+<div class="main-container">
 	{% if products %}
     {% for product in products %}
         <div class="card-container">
@@ -73,4 +71,6 @@
       {% endfor %}
     </ul>            
 </aside>
+</div>
+
 {% endblock %}

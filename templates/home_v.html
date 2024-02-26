@@ -8,6 +8,11 @@
 <script type="text/javascript" src="{% static 'js/riseButtons.js' %}"></script> 
 
 
+
+<body>
+
+    <div class="video-container">
+
         <div class="choice-container">
                 <a href="{% url 'rental' %}" class="choice-button2">TABLEWARE AND WAITSTAFF RENTAL</a>
                 <a href="{% url 'cleaning' %}" class="choice-button1">CLEANING SERVICE</a>
@@ -18,6 +23,20 @@
                 <img src="{% static 'pictures/servilimp_logo3.png' %}" id="animated-logo" width="180" height="180" alt="">
 
             </a>
-        </div> 
+        </div>
     
+        <div class="video-content">
+            <video autoplay loop muted width="320" height="180" loading="lazy">
+                <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+                <p>Your browser does not support the video tag.</p>
+            </video>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
 {% endblock%}
