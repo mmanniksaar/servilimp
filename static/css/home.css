@@ -106,7 +106,7 @@ img {
     padding: 80px; 
     position: absolute;
     top: 20vw; 
-    right: -70vw; 
+    right: 70vw; 
     transform: translateY(-35vh);
     z-index: 1;
 
@@ -136,9 +136,9 @@ img {
         width: 100vh; /* Logo laius suhtena ekraani laiusest */
         padding: 10px; 
         position: absolute;
-        top: 75vw; 
-        right: -200vw; 
-        transform: translateY(-35vh);
+        top: 108vw; 
+        right: -123vw; 
+        /*transform: translateY(-35vh);*/
     
     }
     .logo-container img {

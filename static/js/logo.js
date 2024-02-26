@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("animated-logo");
 
     function calculateStartPosition() {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(startPosition);
 
         return startPosition;
-    }
+    } */
 
 /*     gsap.to(logo, {
         duration: 2,
