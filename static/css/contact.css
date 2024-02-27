@@ -1,6 +1,6 @@
 
 .contact-container {
-    margin-top: 60px; 
+    margin-top: 20px; 
     margin-bottom: 20px;
     display: flex;
     flex: 1;
@@ -11,14 +11,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 1%;
+    padding: 1rem;
    /* padding-top: 2.5vw;*/
     border-radius: 1vw;
-    width: auto;
-    height: auto;
+    width: 95%;
+    height: 95%;
     max-width: 98%; 
-    max-height: 85%; 
-    width: 75%; 
+    max-height: 85vh; 
    /* height: 80%;*/
     text-align: center;
     z-index: 1;
@@ -38,8 +37,8 @@
     z-index: 1;
     color: #fff;
     text-align: left;
-    max-width: 60%; 
-    max-height: 75%; 
+    max-width: 65%; 
+    max-height: 85%; 
     width: auto; 
     height: auto; 
     position: relative;
@@ -48,12 +47,12 @@
 
   .contact-info h1{
     padding: 0.2vw;
-    font-size: 2vw;
+    font-size: 3vw;
     color: #fff;
   }
 
   .contact-info p{
-    padding: 0.2vw;
+    padding: 2vw;
     height: auto;
     max-height: 85%;
     font-size: 2vw;
@@ -68,43 +67,43 @@
   }
 
   .contact-info img {
-    max-width: 60%; 
-    max-height: 35%; 
+    max-width: 65%; 
+    max-height: 45%; 
     width: auto; 
     height: auto; 
     overflow: hidden;
   }
   
  .form-container {
-  padding: 1%;
+  padding: 1vw;
   flex: 1;
   flex-wrap: wrap;
   z-index: 1;
   color: #fff;
   text-align: center;
-  max-width: 75%; 
-  max-height: 75%; 
+  max-width: 85%; 
+  max-height: 85%; 
   display: block;
 
 }
 
 .form-container label{
-    font-size: 1.3vw;
+    font-size: 3.3vw;
     text-align: left; 
     color: #fff;
 }
 
 .form-container h1{
-    font-size: 2vw;
+    font-size: 4vw;
     color: #fff;
 }
 
 .form-container input[type=text], select, textarea {
-  font-size: 1.2vw;
+  font-size: 4vw;
   font-family: 'Arial';
   width: 100%;
   height: 75%;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 0.5vw;
   box-sizing: border-box;
@@ -114,11 +113,11 @@
 }
 
 .form-container input[type=submit] {
-  font-size: 1.5vw;
+  font-size: 5.5vw;
   background-color: #023629;
   color: white;
-  width: 8vw;
-  height: 4vw;
+  width: 35vw;
+  height: 8vh;
   border-radius: 6vw;
   border: none;
   cursor: pointer;
