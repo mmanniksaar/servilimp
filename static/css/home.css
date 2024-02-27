@@ -24,7 +24,7 @@ img {
  
  .choice-container {
 /*     display: inline;
- */    width: 40vw;
+ */ width: 40vw;
     right: 6vw;
     top: 50%;
     position: absolute;
@@ -102,7 +102,7 @@ img {
 }
 
 .logo-container {
-    width: 80vh; /* Logo laius suhtena ekraani laiusest */
+    width: 50vh; /* Logo laius suhtena ekraani laiusest */
     padding: 80px; 
     position: absolute;
     top: 40%; 
@@ -162,11 +162,11 @@ img {
     }
 
     .logo-container {
-        width: 120vw; /* Logo laius suhtena ekraani laiusest */
+        width: 100vw; /* Logo laius suhtena ekraani laiusest */
         padding: 1vw; 
         position: absolute;
-        top: 25%; 
-        right: -90%; 
+        top: 40%; 
+        right: -50%; 
         /*transform: translate(-50%, -50%);*/
         z-index: 0.5;
 
