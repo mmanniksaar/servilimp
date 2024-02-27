@@ -33,5 +33,5 @@
     window.addEventListener("resize", function () {
         console.log(calculateStartPosition()); 
         gsap.to(logo, { x: -calculateStartPosition() });
-    }); */
-});
+    }); 
+});*/
