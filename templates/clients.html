@@ -5,7 +5,6 @@
 <link href="{% static 'css/clients.css' %}" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="{% static 'js/clients_zoom.js' %}"></script> <!--modal-->
 
-<div class="video-container">
   
   <div class="client-container">
     {% if clients_items %}
@@ -21,13 +20,7 @@
   </div>
   {% endif %}
     </div>
-    <div class="video-content">
-      <video autoplay loop muted width="320" height="180" loading="lazy">
-          <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
-          <p>Your browser does not support the video tag.</p>
-      </video>
-  </div>
-</div>
+
 
 
 <!-- The Modal -->

@@ -9,10 +9,17 @@
 <script type="text/javascript" src="{% static 'js/card.js' %}"></script> 
 
 
+<aside>
+  <ul>
+        <li><a href="{% url 'rental' %}">All products</a></li>
+    {% for category in links %}
+        <li><a href="{{ category.get_url}}">{{ category.category_name }}</a></li>
+    {% endfor %}
+  </ul>            
+</aside>
 
-
-<div class="rent_main">
 <div class="main-container">
+
 	{% if products %}
     {% for product in products %}
         <div class="card-container">
@@ -63,14 +70,6 @@
           {% endif %}
  
   </div>
-  <aside>
-    <ul>
-          <li><a href="{% url 'rental' %}">All products</a></li>
-      {% for category in links %}
-          <li><a href="{{ category.get_url}}">{{ category.category_name }}</a></li>
-      {% endfor %}
-    </ul>            
-</aside>
-</div>
+
 
 {% endblock %}

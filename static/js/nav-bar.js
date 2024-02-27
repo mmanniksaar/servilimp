@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
     var navbarIcon = document.getElementById('navbarIcon');
     var navbarLinks = document.getElementById('navbarLinks');
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     else {
         console.error('Navbar Icon or Links not found');
     }
-});
+}); */
 /* function toggleNavbar() {
     var x = document.getElementById("navbarLinks");
     if (x.style.display === "block") {
