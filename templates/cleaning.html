@@ -5,32 +5,60 @@
 <script type="text/javascript" src="{% static 'js/about.js' %}"></script>
  
 
- <link href="{% static 'css/about.css' %}" type="text/css" rel="stylesheet">
-
+<!--  <link href="{% static 'css/about.css' %}" type="text/css" rel="stylesheet">
+ -->
 <style>
+
+.cleaning-container {
+    margin-top: 16vw; 
+    background-color: #333;
+    padding: 1vw;
+    border-radius: 1vw;
+    width: 98%;
+    height: 100%;
+    position:absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 85vh;
+/*     display:flexbox;
+ */    z-index: 1;
+
+   }
+
+h1 {
+    color: #f2e9e9;
+}
+
+
 .cleaning-txt {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-areas: "text image";
+    grid-template-columns: auto;
+    grid-template-areas: "text";
+    padding: 2vw;
     width: 100%;
-    margin: 20px;
-    text-align: justify;
+/*     margin: 20px;
+ */    text-align: justify;
 }
 
 .cleaning-txt p {
     grid-area: text;
-    width: 90%;
-    font-size: 26px;
+    width: 100%;
+    font-size: 18px;
     font-family: 'Roboto', sans-serif;
     color: #fff;
 }
 
 .cleaning-txt img {
-    padding: 20px;
-    grid-area: image;
-    width: 100%;
-    height: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
+
 
 .blurry-image {
     filter: blur(0px);
@@ -38,8 +66,7 @@
 </style>
 
 
-                <div class="about-video-container">
-                    <div class="about-container">
+                    <div class="cleaning-container">
                         <h1>Cleaning services</h1>
 
                         <div class="cleaning-txt">
@@ -54,14 +81,6 @@ Dismantling of waste containers and if necessary cleaning them, exchange of tras
                         </div>
                         </div>
                     
-                <div class="about-video-content">
-                    <video autoplay loop muted id="myVideo" width="320" height="180" loading="lazy">
-                        <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
-                        <p>Your browser does not support the video tag.</p>
-                    </video>
-                </div>
-            </div>
-
 
 <!--     <script>
         var video = document.getElementById("myVideo");
