@@ -7,7 +7,7 @@ footer {
   background: linear-gradient(to bottom right, #423f3f, #050505);
   color: white;
   text-align: center;
-  opacity: 0.6;
+  opacity: 0.9;
   z-index: 5;
 }
 footer p {
