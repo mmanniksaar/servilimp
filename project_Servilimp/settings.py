@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1']
+ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'servilimp-3a5ad048a799.herokuapp.com']
 
 
 INSTALLED_APPS = [
