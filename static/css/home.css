@@ -67,6 +67,7 @@
     border: 1px solid #0f0f0f;
     border-style: groove;
     transition: background 0.3s, opacity 0.3s; /* Ühtlustab üleminekud */
+    cursor: pointer;
 }
 
 .choice-button1 {
@@ -122,8 +123,11 @@
 @media (max-width: 768px) {
     .choice-button1,
     .choice-button2 {
+        display: flex;
         font-size: 2vh; /* Muudetud vastavalt soovile */
         align-items: center;
+        cursor: pointer;
+        z-index: 20;
     }
 
     .logo-container {
