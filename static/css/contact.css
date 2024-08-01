@@ -309,10 +309,10 @@ input[type=submit]:hover {
         display: block;
         padding-left: 0.8rem;
         padding-right: 0.8rem;
-        top: 45%;
+        top: 50%;
         bottom: 0;
         height: 100%; 
-      /*   max-height: 80%;*/
+        max-height: 100%;
         overflow-y: scroll; 
     }
 
