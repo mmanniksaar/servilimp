@@ -307,7 +307,7 @@ input[type=submit]:hover {
 @media (max-width: 768px) {
     .contact-container {
         display: block;
-        top: auto;
+        top: 45%;
         bottom: 0;
         height: 80%; /* Määra kõrgus, et jätta videole ruumi */
         max-height: 80%;
