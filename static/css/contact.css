@@ -307,11 +307,13 @@ input[type=submit]:hover {
 @media (max-width: 768px) {
     .contact-container {
         display: block;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
         top: 45%;
         bottom: 0;
-        height: 80%; /* Määra kõrgus, et jätta videole ruumi */
-        max-height: 80%;
-        overflow-y: scroll;
+        height: 100%; 
+      /*   max-height: 80%;*/
+        overflow-y: scroll; 
     }
 
     .contact-info h1 {
