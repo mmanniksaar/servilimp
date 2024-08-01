@@ -137,6 +137,8 @@
     display: block;
     top: 42%;
     height: 80%;
+    overflow-y: scroll;
+
 }
 .contact-info h1{
   font-size: 1rem;
