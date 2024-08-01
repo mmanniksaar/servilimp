@@ -136,7 +136,7 @@
 .contact-container {
     display: block;
     top: 42%;
-    height: 80%;
+    /* height: 80%; */
     overflow-y: scroll;
 
 }
