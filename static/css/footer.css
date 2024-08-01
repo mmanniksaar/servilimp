@@ -1,4 +1,5 @@
 footer {
+display: flex;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -6,7 +7,9 @@ footer {
   height: 3vh;
   background: linear-gradient(to bottom right, #423f3f, #050505);
   color: white;
-  text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   opacity: 0.9;
   z-index: 5;
 }

@@ -4,10 +4,8 @@ from .models import Gallery
 
 def gallery_view(request):
     gallery_items = Gallery.objects.all()
-    
     context = {
         'gallery_items': gallery_items,
     }
+    print(gallery_items)
     return render(request, 'gallery.html' ,context)
-
-

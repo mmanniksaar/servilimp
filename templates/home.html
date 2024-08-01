@@ -2,22 +2,44 @@
 {% load static %}
 {% block content %}
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link href="{% static 'css/home.css' %}" type="text/css" rel="stylesheet">
 
 <script type="text/javascript" src="{% static 'js/logo.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/riseButtons.js' %}"></script> 
 
+<link href="{% static 'css/home.css' %}" type="text/css" rel="stylesheet">
+
+
+<body>
+
+
+
+
+    <div class="video-container">
 
         <div class="choice-container">
+            <div class="grid-container">
+<!--            <button href="{% url 'rental' %}" class="choice-button2">TABLEWARE AND WAITSTAFF RENTAL</button>
+                <button class="choice-button1">CLEANING SERVICE</button>-->
                 <a href="{% url 'rental' %}" class="choice-button2">TABLEWARE AND WAITSTAFF RENTAL</a>
                 <a href="{% url 'cleaning' %}" class="choice-button1">CLEANING SERVICE</a>
+            </div>
         </div>
 
         <div class="logo-container">
-            <a href="#">
-                <img src="{% static 'pictures/servilimp_logo3.png' %}" id="animated-logo" width="180" height="180" alt="">
-
+            <a href="{% url 'home' %}">
+                <img src="{% static 'pictures/servilimp_logo2.png' %}" id="animated-logo" alt="Logo">
             </a>
-        </div> 
+        </div>
     
+        <div class="video-content">
+            <video autoplay loop muted>
+                <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
 {% endblock%}

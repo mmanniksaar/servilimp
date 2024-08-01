@@ -1,85 +1,303 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 1120px) {
     :root {
       --h2-font-size: 1.5rem;
       --small-font-size: .875rem;
+    }
+}
 
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.cleaning-container {
+    float: right;
+}
+
+.video-content {
+    flex: 1; /* Video võtab ülejäänud laiuse */
+}
+
+.video-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Säilitab aspektisuhte ja kattab konteinerit */
+}
+
+.choice-container {
+    width: 40vw;
+    position: absolute;
+    margin-right: 5vw;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+/*
+    z-index: 1;
+*/
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice-button1,
+.choice-button2 {
+    display: flex; /* Tagab, et link täidab kogu nupu ala */
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    border-radius: 1vh;
+    font-size: 3vh;
+    height: 25vh;
+    width: 100%;
+    text-decoration: none; /* Eemaldab allajoonimise lingilt */
+    border: 1px solid #0f0f0f;
+    border-style: groove;
+    transition: background 0.3s, opacity 0.3s; /* Ühtlustab üleminekud */
+}
+
+.choice-button1 {
+    background-image: url('/static/pictures/button_container_bg2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.choice-button2 {
+    background-image: url('/static/pictures/button_container_bg1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.choice-button1:hover,
+.choice-button2:hover {
+    background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
+    opacity: 0.7; /* Muudab läbipaistvust hoveri ajal */
+}
+
+.logo-container {
+    width: 45%; /* Logo laius suhtena ekraani laiusest */
+    position: fixed;
+    top: 50%; /* Logo asukoht ekraani keskel */
+    right: -10%;
+    cursor: pointer;
+    /*z-index: 1;*/
+
+}
+
+.logo-container img {
+    width: 50%; /* Aseta laius 100%, et täita ülemist konteinerit */
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+@media (max-width: 300px) {
+    .choice-button1,
+    .choice-button2 {
+        font-size: 1.5vh; /* Muudetud vastavalt soovile */
+        align-items: center;
+    }
+
+    .logo-container {
+        width: 35%; /* Logo laius suhtena ekraani laiusest */
+        right: -18%;
+        top: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .choice-button1,
+    .choice-button2 {
+        font-size: 2vh; /* Muudetud vastavalt soovile */
+        align-items: center;
+    }
+
+    .logo-container {
+        width: 65%; /* Logo laius suhtena ekraani laiusest */
+        right: -18%;
+        top: 30%;
+    }
+}
+
+
+
+
+
+
+/*========== Responsive typography ==========*//*
+
+@media screen and (min-width: 1120px) {
+    :root {
+      --h2-font-size: 1.5rem;
+      --small-font-size: .875rem;
     }
   }
 
+.video-container {      */
+/*kasutusel*//*
 
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
 
 .cleaning-container {
     float: right;   
 
 }
 
+.video-content {        */
+/*kasutuses*//*
+
+    flex: 1; */
+/* Video võtab ülejäänud laiuse *//*
+
+}
+
+.video-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; */
+/* Säilitab aspektisuhte ja kattab konteinerit *//*
+
+}
 
 
 
-
-img {
-    display: block !important;
-  }
- 
- .choice-container {
-/*     display: inline;
- */ width: 40vw;
-    right: 6vw;
-    top: 50%;
+*/
+/*.choice-container {
+    margin-right: 25vw;
+    background-color: #1d1b1b;
+    border-radius: 12px;
+    padding-top: 50vw;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 30vw;
+    padding: 5px;
+    width: 40vw;
+    height: auto;
     position: absolute;
-/*     height: 50vh;
- */    z-index: 1;
-
-}
-
-.choice-container a{
-    display: flex;
-    color: #cdc2c2;
-    font-size: 22px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    line-height: 2.5vh;
-    text-align: center;
-/*     overflow: hidden;
- */    text-decoration: none;
-}
-
-
-
-.choice-button1 {
-    /* ühised stiilid */
-    display: block; /*flex*/
-    position: relative;
-    text-shadow: 10px 10px 4px rgba(23, 22, 22, 0.8);
-    line-height: 3vh; 
-    color: rgba(255, 255, 255, 0.8);
-/*     transition: background 0.3s, opacity 0.3s; /* lisage üleminek siia */
-    border-radius: 1vh;
-    font-size: 4vh; 
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
     opacity: 0.9;
-    z-index: 1;
-    border-color: aqua;
-    padding: 10vh;
-    white-space: normal;
 }
 
+.grid-container {
+display: grid;
+grid-template-row: 300px 300px;
+
+}
+
+.choice-button1,
 .choice-button2 {
-    /* ühised stiilid */
-    display: block; /*flex*/
     position: relative;
     text-shadow: 10px 10px 4px rgba(23, 22, 22, 0.8);
-    line-height: 3vh; 
+    line-height: 25vh; *//*
+*/
+/* Muudetud vastavalt soovile *//*
+*/
+/*
     color: rgba(255, 255, 255, 0.8);
-/*     transition: background 0.3s, opacity 0.3s; /* lisage üleminek siia */
-    border-radius: 1vh;
-    font-size: 4vh; 
+    transition: background 0.3s;
+    border-radius: 1vh; *//*
+*/
+/* Muudetud vastavalt soovile *//*
+*/
+/*
+    font-size: 3vh; *//*
+*/
+/* Muudetud vastavalt soovile *//*
+*/
+/*
     opacity: 0.9;
+    cursor: pointer;
+   *//*
+*/
+/* margin-bottom: 1vh;*//*
+*/
+/*
+}*//*
+
+
+*/
+/*.choice-button1,
+.choice-button2 {
+    position: relative;
+    text-shadow: 10px 10px 4px rgba(23, 22, 22, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+    transition: background 0.3s;
+    border-radius: 1vh; *//*
+*/
+/* Muudetud vastavalt soovile *//*
+*/
+/*
+    font-size: 3vh; *//*
+*/
+/* Muudetud vastavalt soovile *//*
+*/
+/*
+    opacity: 0.9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 25vh; *//*
+*/
+/* Muudetud vastavalt soovile *//*
+*/
+/*
+}*//*
+
+
+.choice-container {
+    width: 40vw;
+    position: absolute;
+    margin-right: 5vw;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice-button1,
+.choice-button2 {
+    display: block; */
+/* Muudetud inline-block'ilt block'iks *//*
+
+    color: rgba(255, 255, 255, 0.8);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 1vh;
+    font-size: 3vh;
+    height: 25vh;
+    width: 100%;
     z-index: 1;
-    border-color: aqua;
-    padding: 10vh;
-    white-space: normal;
+    text-decoration: none; */
+/* Eemaldab allajoonimise lingilt *//*
+
 }
 
 .choice-button1 {
@@ -89,8 +307,6 @@ img {
     background-repeat: no-repeat;
     border: 1px solid #0f0f0f;
     border-style: groove;
-    height: 25vh;
-    width: 100%;
 }
 
 .choice-button2 {
@@ -100,97 +316,95 @@ img {
     background-repeat: no-repeat;
     border: 1px solid #0f0f0f;
     border-style: groove;
-    height: 25vh;
-    width: 100%;
+}
+
+.choice-button1:hover,
+.choice-button2:hover {
+    background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
+    opacity: 0.5;
 }
 
 .choice-button1:hover {
-    /* Gradient hoveri ajal */
-    background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
-    /*background: linear-gradient(to bottom right, #00ff00, #0000ff);*/
-    opacity: 1; /* Lisa muud soovitud stiilielemendid hoveri ajal */
+    opacity: 1;
 }
 
 .choice-button2:hover {
-    background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
-
-    opacity: 1; /* Muudame tekstile esiletoomiseks läbipaistvust tagasi */
+    opacity: 1;
 }
+
 
 .logo-container {
-    width: 50vh; /* Logo laius suhtena ekraani laiusest */
-    padding: 80px; 
-    position: absolute;
-    top: 40%; 
-    right: 35%; 
-    transform: translate(-50%, -50%);
+    width: 45%; */
+/* Logo laius suhtena ekraani laiusest *//*
 
-/*     transform: translateY(-35vh); */
+    padding: 10%; */
+/* Vajadusel muuda
+    position: fixed;
+    top: 50%; */
+/* Logo asukoht ekraani keskel *//*
+
     z-index: 1;
+    right: -10%;
+    */
+/*transform: translateY(-65%); */
+/* Vertikaalselt keskjoondatud *//*
 
-}
-
-.logo-container a {
-    text-decoration: none;
 
 }
 
 .logo-container img {
-    width: 80%; /* Aseta laius 100%, et täita ülemist konteinerit */
-    height: 80%; /* Hoia pildi suhe */
+    width: 50%; */
+/* Aseta laius 100%, et täita ülemist konteinerit *//*
+
+   */
+/* height: 80%; */
+/* Hoia pildi suhe *//*
+
+   */
+/*padding:15px;*//*
+
     border-radius: 50%;
+    opacity: 0.6;
+}
+
+@media (max-width: 300px) {
+
+.choice-button1,
+.choice-button2 {
+    font-size: 1.5vh; */
+/* Muudetud vastavalt soovile *//*
+
+align-items: center;
+}
+
+.logo-container {
+    width: 35%; */
+/* Logo laius suhtena ekraani laiusest *//*
+
+    right: -18%;
+    top: 30%;
 
 }
 
+}
 
-@media only screen and (max-width: 600px) {
-    .choice-container a{
-        font-size: 18px;
-        line-height: 2.5vh;
+@media (max-width: 768px) {
 
-    }
+.choice-button1,
+.choice-button2 {
+    font-size: 2vh; */
+/* Muudetud vastavalt soovile *//*
 
-    .logo-container {
-        width: 100vh; /* Logo laius suhtena ekraani laiusest */
-        padding: 10px; 
-        position: absolute;
-        top: 108vw; 
-        right: -123vw; 
-        /*transform: translateY(-35vh);*/
-        z-index: 0.5;
+    align-items: center;
+}
 
-    }
-    .logo-container img {
-        width: 20%; /* Aseta laius 100%, et täita ülemist konteinerit */
-        height: 40%; /* Hoia pildi suhe */
-        border-radius: 50%;
-    
-    }
-  }
+.logo-container {
+    width: 65%; */
+/* Logo laius suhtena ekraani laiusest *//*
 
+    right: -18%;
+    top: 30%;
 
-
-  @media (min-width: 300px) {
-    .choice-container a{
-        font-size: 18px;
-        line-height: 3.5vh;
-
-    }
-
-    .logo-container {
-        width: 100vw; /* Logo laius suhtena ekraani laiusest */
-        padding: 1vw; 
-        position: absolute;
-        top: 40%; 
-        right: -50%; 
-        /*transform: translate(-50%, -50%);*/
-        z-index: 0.5;
-
-    }
-    .logo-container img {
-        width: 30%; /* Aseta laius 100%, et täita ülemist konteinerit */
-        height: 50%; /* Hoia pildi suhe */
-        border-radius: 50%;
-    
-    }
-  }
+}
+}
+*/

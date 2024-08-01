@@ -5,27 +5,30 @@
 <script type="text/javascript" src="{% static 'js/about.js' %}"></script>
  
 
-<!--  <link href="{% static 'css/about.css' %}" type="text/css" rel="stylesheet">
- -->
+
 <style>
 
 .cleaning-container {
-    margin-top: 16vw; 
-    background-color: #333;
-    padding: 1vw;
-    border-radius: 1vw;
-    width: 98%;
-    height: 100%;
-    position:absolute;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    text-align: center;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    max-height: 85vh;
-/*     display:flexbox;
- */    z-index: 1;
+  background-color: #333;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 3vw;
+  padding: 5vw;
+  padding-top: 2.5vw;
+  border-radius: 1vw;
+  width: 75%;
+  height: auto;
+  text-align: center;
+  opacity: 0.9;
+  overflow-y: scroll;
+  max-height: 85vh;
+
+
+
 
    }
 
@@ -47,7 +50,7 @@ h1 {
 .cleaning-txt p {
     grid-area: text;
     width: 100%;
-    font-size: 18px;
+    font-size: 25px;
     font-family: 'Roboto', sans-serif;
     color: #fff;
 }
@@ -82,9 +85,9 @@ Dismantling of waste containers and if necessary cleaning them, exchange of tras
                         </div>
                     
 
-<!--     <script>
+    <script>
         var video = document.getElementById("myVideo");
         video.playbackRate = 0.5;
-    </script>  -->
+    </script>
 
     {% endblock%}

@@ -1,129 +1,141 @@
+.video-container {
+  /*kasutusel*/
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.cleaning-container {
+  float: right;
+
+}
+
+.video-content {
+  /*kasutuses*/
+  flex: 1;
+  /* Video võtab ülejäänud laiuse */
+}
+
+.video-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Säilitab aspektisuhte ja kattab konteinerit */
+}
 
 .contact-container {
-    margin-top: 16vw; 
-    margin-bottom: 20px;
     display: flex;
-    flex: 1;
-    position: absolute;
+    background-color: #333;
     background: linear-gradient(to bottom right, #333, #958686);
     flex-wrap: wrap; /* Vajadusel lähevad järgmised elemendid uuele reale */
     align-items: flex-start;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 1rem;
+    margin-top: 0.1vw;
+   /* padding: 5vw;*/
    /* padding-top: 2.5vw;*/
     border-radius: 1vw;
-    width: 95%;
-    height: 95%;
-    max-width: 98%; 
-    max-height: 85vh; 
-   /* height: 80%;*/
+    width: 90%;
+    height: auto;
     text-align: center;
+    opacity: 0.98;
+    overflow-y: scroll;
+/*    max-height: 80vh;
+
     z-index: 1;
+*/
   }
 
-  /* Peidab contact-container-i scrollbari*/
-  .contact-container::-webkit-scrollbar {
-    width: 8px; 
-}
-  
-
-
   .contact-info{
-    padding: 0.2vw;
+    padding: 3vw;
+   /* display: flex;*/
     flex: 1;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Vajadusel lähevad järgmised elemendid uuele reale */
     z-index: 1;
     color: #fff;
     text-align: left;
-    max-width: 65%; 
-    max-height: 85%; 
-    width: auto; 
-    height: auto; 
-    position: relative;
 
+ 
   }
 
   .contact-info h1{
-    padding: 0.2vw;
-    font-size: 3vw;
+    padding: 1vw;
+
+    font-size: 2vw;
     color: #fff;
   }
 
   .contact-info p{
-    padding: 2vw;
-    height: auto;
-    max-height: 85%;
+    padding: 1vw;
+
     font-size: 2vw;
     color: #fff;
   }
 
   .contact-info a{
-    padding: 0.5vw;
+    padding: 1vw;
     font-family: 'Arial';
     font-size: 2vw;
     color: #afd26c;
   }
 
-  .contact-info img {
-    max-width: 65%; 
-    max-height: 45%; 
-    width: auto; 
-    height: auto; 
-    overflow: hidden;
+  input[type=text], select, textarea {
+    font-size: 1.2vw;
+    font-family: 'Arial';
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 0.5vw;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
   }
   
- .form-container {
-  padding: 1vw;
-  flex: 1;
-  flex-wrap: wrap;
-  z-index: 1;
-  color: #fff;
-  text-align: center;
-  max-width: 85%; 
-  max-height: 85%; 
-  display: block;
+  input[type=submit] {
+    font-size: 1.5vw;
+    background-color: #023629;
+    color: white;
+    width: 8vw;
+    height: 4vw;
+    border-radius: 6vw;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    font-size: 1.5vw;
+    background-color: #45a049;
+  }
 
+ .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    padding: 1vw;
+    flex: 1;
+    flex-wrap: wrap; 
+    z-index: 1;
 }
 
 .form-container label{
-    font-size: 3.3vw;
+    font-size: 1.3vw;
     text-align: left; 
     color: #fff;
 }
 
-.form-container h1{
-    font-size: 4vw;
-    color: #fff;
+  @media (max-width: 300px) {
+
 }
 
-.form-container input[type=text], select, textarea {
-  font-size: 4vw;
-  font-family: 'Arial';
-  width: 100%;
-  height: 75%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 0.5vw;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
+@media (max-width: 768px) {
+.contact-container {
+    display: block;
+    height: 80%;
 
-.form-container input[type=submit] {
-  font-size: 5.5vw;
-  background-color: #023629;
-  color: white;
-  width: 35vw;
-  height: 8vh;
-  border-radius: 6vw;
-  border: none;
-  cursor: pointer;
 }
-
-.form-container input[type=submit]:hover {
-  font-size: 1.5vw;
-  background-color: #45a049;
 }
