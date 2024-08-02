@@ -68,6 +68,7 @@
     border-style: groove;
     transition: background 0.3s, opacity 0.3s; /* Ühtlustab üleminekud */
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .choice-button1 {
@@ -87,8 +88,8 @@
 .choice-button1:hover,
 .choice-button2:hover {
     background: linear-gradient(to bottom right, #e2d7d7, #0f0f0f);
-    opacity: 0.7; /* Muudab läbipaistvust hoveri ajal */
-}
+    opacity: 0.7; 
+} 
 
 .logo-container {
     width: 45%; /* Logo laius suhtena ekraani laiusest */
@@ -127,7 +128,8 @@
         font-size: 2vh; /* Muudetud vastavalt soovile */
         align-items: center;
         cursor: pointer;
-        z-index: 20;
+        z-index: 10;
+        pointer-events: auto;
     }
 
     .logo-container {
