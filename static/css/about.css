@@ -1,4 +1,4 @@
-.video-container {      /*kasutusel*/
+.video-container {     
     position: relative;
     width: 100%;
     height: 100vh;
@@ -21,23 +21,25 @@
     object-fit: cover; 
 }
 
-.about-container {
- /* display: block;*/
-/*  position: absolute;*/
-  /*height: 100%;*/
-
-  max-height: 80%;
-
-  background-color: #333;
-  overflow-y: scroll;
-/*  margin-top: 1.5vw;
-  margin-bottom: 5.5vw;*/
-  justify-content: center;
-/*  padding: 5vw;*/
-  text-align: center;
-
-
-  }
+  .about-container {
+    display: flex;
+    background-color: #333;
+    background: linear-gradient(to bottom right, #333, #958686);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 1rem; /* Lisa siia margin */
+    border-radius: 1vw;
+    width: 90%;
+    max-height: 80%; /* Määra maksimaalne kõrgus */
+    text-align: center;
+    opacity: 0.98;
+    overflow-y: auto;
+    z-index: 10;
+}
 
 .about-text-container a {
     text-decoration: none;
@@ -91,7 +93,7 @@
 }
 
 @media (max-width: 768px) {
-.about-container {
+/* .about-container {
   display: block;
   background-color: #333;
   overflow-y: scroll;
@@ -102,7 +104,17 @@
   width: 90%;
   max-height: 80%;
   opacity: 0.98;
-  }
+  } */
+.about-container {
+    display: block;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    top: 47%;
+    bottom: 0;
+    height: 95%; 
+    max-height: 100%;
+    overflow-y: scroll; 
+}
 
   .about-container h1 {
     font-size: 4.5vw;
