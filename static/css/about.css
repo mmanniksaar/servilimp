@@ -28,13 +28,12 @@
     flex-wrap: wrap;
     align-items: flex-start;
     position: absolute;
-    top: 50%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 1rem; /* Lisa siia margin */
     border-radius: 1vw;
     width: 90%;
-    max-height: 80%; /* Määra maksimaalne kõrgus */
+    max-height: 80%; 
     text-align: center;
     opacity: 0.98;
     overflow-y: auto;
@@ -53,15 +52,15 @@
 }
 
 .about-container h1 {
-    font-size: 2.5vw;
-    color: #a8a2a2;
-    padding: 5vw;
+    font-size: 1.5vw;
+    color: #e0dada;
+    padding: 1vw;
 
 }
 
 .about-container h2 {
     font-size: 2.5vw;
-    color: #676262;
+    color: #e0dada;
 
 }
 
@@ -72,9 +71,8 @@
 }
 
 .about-container p {
-    font-size: 2vw;
-    padding: 5vw;
-
+  font-size: 1.5vw;
+  padding: 0px 30px;
   }
 
 
