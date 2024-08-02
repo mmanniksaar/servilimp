@@ -80,7 +80,7 @@ header {
       align-items: center;
       transition: all 0.3s;
       opacity: 0.9;
-      z-index: 20;
+      z-index: 21;
     }
 
     ul li {
