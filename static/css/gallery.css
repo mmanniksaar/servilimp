@@ -45,6 +45,7 @@
 
 .card__container {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 3.5rem;
   column-gap: 3.5rem;
   position: relative;
@@ -59,7 +60,7 @@
 }
 
   .card__img {
-    width: auto;
+    width: 90%;
     height: 30vw;
     object-fit: cover; 
     object-position: top; 
@@ -79,7 +80,7 @@
   bottom: -9rem;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 70%;
   padding: 10px;
   background-color: hsl(0, 0%, 100%);
   color: white;
@@ -190,19 +191,46 @@
 }
 
 /* For medium devices */
-@media screen and (min-width: 768px) {
+@media (max-width: 768px) {
+  .gallery-container{
+    width: 85%;
+    display: block;
+    background-color: #333;
+    overflow-y: scroll;
+    top: 43%;
+    margin-top: 1.5vw;
+    margin-bottom: 5.5vw;
+    justify-content: center;
+    padding: 1rem;
+  }
+
   .card__container {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 3.5vw;
+    display: block;
+    padding-bottom: 0.8rem;
+    top: 48%;
+    bottom: 0;
+    height: 95%; 
+    margin: 0 0;
+    max-height: 100%;
+    overflow-y: scroll; 
+  }
+  .card__article {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 1;
+    padding-top: 1rem;
+
   }
 
   .card__img {
-    width: 25vw;  /*teeb pildi osa laiemaks*/
+    height: 100%;
+    width: 100%;  /*teeb pildi osa laiemaks*/
   }
 }
 
 /* For large devices */
-@media screen and (min-width: 1120px) {
+/* @media screen and (min-width: 1120px) {
   .container {
     height: 100vh;
   }
@@ -211,14 +239,14 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .card__img {
-    width: 25vw;  /*teeb pildi osa laiemaks*/
+    width: 25vw;  
   }
   .card__data {
     width: 316px;
     padding-inline: 2.5rem;
   }
 }
-
+ */
 
 
 
@@ -291,8 +319,8 @@
   }*/
 
   /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
+/*   @media only screen and (max-width: 700px){
     .modal-content {
       width: 100%;
     }
-  }
+  } */
