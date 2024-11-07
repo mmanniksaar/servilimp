@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('admin/defender/', include('defender.urls')),  # defender admin
     path('clients/', include('apps.clients.urls')),        # 'clients/' clients.urls suunab faili clients/urls.py
+    #path('rental/', views.rental, name='rental'),
     path('rental/', include('apps.rental.urls')),
     path('gallery/', include('apps.gallery.urls')),        # 'gallery/' gallery.urls suunab faili gallery/urls.py
               ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

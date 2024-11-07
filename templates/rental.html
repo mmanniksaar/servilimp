@@ -4,72 +4,57 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link href="{% static 'css/zoom.css' %}" type="text/css" rel="stylesheet">
-<link href="{% static 'css/rental.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'css/rental.css' %}" type="text/css" rel="stylesheet"> 
 
-<script type="text/javascript" src="{% static 'js/card.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/card.js' %}"></script>
+<div class="video-container">
 
+  <aside>
+    <ul>
+      <li><a href="{% url 'rental' %}">All products</a></li>
+      {% for category in links %}
+          <li><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
+      {% endfor %}
+    </ul>            
+  </aside> 
 
-<aside>
-  <ul>
-        <li><a href="{% url 'rental' %}">All products</a></li>
-    {% for category in links %}
-        <li><a href="{{ category.get_url}}">{{ category.category_name }}</a></li>
-    {% endfor %}
-  </ul>            
-</aside>
-
-<div class="main-container">
-
-	{% if products %}
-    {% for product in products %}
+  <!-- Toodete ala -->
+  <div class="rental-container">
+    {% if products %}
+      {% for product in products %}
         <div class="card-container">
-            <div class="images">
-              <img src="{{ product.product_image.url }}" />
+          <div class="images">
+            <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}">
+          </div>
+          <div class="product">
+            <h1>{{ product.product_name }}</h1>
+            <h1>{{ product.size }} {{ product.unit }}</h1>
+            <h2>{{ product.price }}€ + 24% VAT</h2>
+            <div class="desc-container">
+              <p class="desc">{{ product.description }}</p>
             </div>
-            <div class="slideshow-buttons">
-              <div class="one"></div>
-              <div class="two"></div>
-              <div class="three"></div>
-              <div class="four"></div>
-            </div>
-         <!--   <p class="pick">choose size</p>
-             <div class="sizes">
-              <div class="size">5</div>
-              <div class="size">6</div>
-              <div class="size">7</div>
-              <div class="size">8</div>
-              <div class="size">9</div>
-              <div class="size">10</div>
-              <div class="size">11</div>
-              <div class="size">12</div>
-            </div> -->
-            <div class="product">
-              <h1>{{ product.product_name }}</h1>
-              <h1>{{ product.size }} {{ product.unit }}</h1>
-        
-              <h2>{{ product.price }}€ + 24% VAT</h2>
-                  <div class="desc-container">
-                    <p class="desc">{{ product.description }}</p>
-                  </div>
-                  <div class="buttons">
-<!--                     <button class="add">Add to Cart</button>
- -->                    <a href="{% url 'contact' %}" class="add">Add to Cart</a>
-                    <a class="like"><span>🔐</span></a>
-                   </div>
+            <div class="buttons">
+              <a href="{% url 'contact' %}" class="add">Add to Order</a>
+              <a class="like"><span>🔐</span></a>
             </div>
           </div>
-          {% endfor %}
-          {% else %}
-            <div class="text-center">
-              <h2> No items found. </h2>
-              <hr>
-              <br>
-              <a href="{% url 'rental' %}" class="btn btn-primary" style="background-color:#482809"; >Continue shopping</a>
-            </div>
-        
-          {% endif %}
- 
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="text-center">
+        <h2>No items found.</h2>
+        <hr>
+        <br>
+        <a href="{% url 'rental' %}" class="btn btn-primary" style="background-color:#482809;">Continue shopping</a>
+      </div>
+    {% endif %}
   </div>
 
+    <div class="video-content">
+      <video autoplay loop muted>
+          <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
 
+  </div>
 {% endblock %}

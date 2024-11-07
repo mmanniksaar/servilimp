@@ -26,6 +26,10 @@ def gallery(request):
   template = loader.get_template('gallery.html')
   return HttpResponse(template.render())
 
+def rental(request):
+  template = loader.get_template('rental.html')
+  return HttpResponse(template.render())
+
 def cleaning(request):
   template = loader.get_template('cleaning.html')
   return HttpResponse(template.render())

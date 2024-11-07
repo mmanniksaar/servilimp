@@ -1,0 +1,159 @@
+/* Üldine konteiner rental-lehe jaoks */
+.video-container {
+  /*kasutusel*/
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  
+  display: flex;
+}
+
+.video-content {
+  /*kasutuses*/
+  flex: 1;
+  /* Video võtab ülejäänud laiuse */
+}
+
+.video-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Säilitab aspektisuhte ja kattab konteinerit */
+}
+
+
+/* .rental-page {
+  display: flex;
+  height: 100vh;
+  background-color: #333;
+  background: linear-gradient(to bottom right, #333, #958686);
+  color: #f4f4f4;
+  border-radius: 1vw;
+
+} */
+
+/* Fikseeritud kategooria menüü vasakul */
+aside {
+  width: 20%; /* Umbes 1/5 ekraani laiusest */
+  background-color: #2e2727;
+  padding-top: 20px;
+  overflow-y: auto;
+  position: fixed;
+  height: 100vh;
+  z-index: 20;
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+aside li {
+  margin-bottom: 15px;
+}
+
+aside a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+/* Toodete ala */
+.rental-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 toodet reas */
+  column-gap: 2.5vw;
+  row-gap: 2.5vw;
+  background-color: #333;
+  background: linear-gradient(to bottom right, #333, #958686);
+  padding: 2rem 2rem;
+  transform: translate(-50%, -50%);
+  width: 76%;
+
+  border-radius: 1vw;
+  overflow-y: auto; /* Vertikaalne kerimine toodetele */
+  height: 90%;
+  box-sizing: border-box;
+  opacity: 0.98;
+  position: absolute;
+
+  top: 46%;
+  left: 60%;
+  z-index: 20;
+
+}
+
+.card-container {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s;
+  padding: 10px;
+
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product h1 {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+.product h2 {
+  font-size: 1em;
+  color: #0c0b0b;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.add {
+  background-color: #482809;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.like span {
+  font-size: 1.2em;
+}
+
+.text-center {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Responsiivsus */
+@media (max-width: 768px) {
+  aside {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .rental-container {
+    margin-left: 0;
+    grid-template-columns: repeat(2, 1fr); /* 2 toodet reas kitsamatel ekraanidel */
+  }
+}
+
+@media (max-width: 480px) {
+  .rental-container {
+    grid-template-columns: 1fr; /* 1 toode reas väikestel ekraanidel */
+  }
+}
