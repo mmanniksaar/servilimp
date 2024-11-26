@@ -1,0 +1,186 @@
+.video-container {
+    display:flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+  }
+  
+  .video-content {
+    /*kasutuses*/
+    flex: 1;
+    /* Video võtab ülejäänud laiuse */
+  }
+  
+  .video-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .rental-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 toodet reas */
+    column-gap: 2.5vw;
+    row-gap: 2.5vw;
+    background-color: #333;
+    background: linear-gradient(to bottom right, #333, #958686);
+    padding: 2rem 2rem;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  
+    border-radius: 1vw;
+    overflow-y: auto; /* Vertikaalne kerimine toodetele */
+    height: 90%;
+    box-sizing: border-box;
+    opacity: 0.98;
+    position: absolute;
+  
+    top: 46%;
+    left: 60%;
+    z-index: 20;
+  
+  }
+
+
+aside {
+    width: 20%; /* Umbes 1/5 ekraani laiusest */
+    background-color: #2e2727;
+    padding-top: 20px;
+    overflow-y: auto;
+    position: fixed;
+    height: 90vh;
+    z-index: 20;
+  }
+  
+  aside ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+  
+  aside li {
+    margin-bottom: 15px;
+  }
+  
+  aside a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+.card {
+  position: relative;
+  height: calc(100% - 30px);
+/*   width: calc(33.333% - 30px);
+ */  background: #fff;
+  overflow: hidden;
+  float: left;
+  margin: 15px;
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    top: calc(100% - 80px);
+    left: 0;
+    opacity: 1;
+    transition: all 0.75s ease-in-out;
+    
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    
+    &-inner {
+      position: relative;
+      display: block;
+      height: 80px;
+
+      display: flex;
+      flex-flow: column nowrap;
+      text-align: center;
+      justify-content: center;
+      
+      transition: all 0.75s ease-in-out;
+    }
+    &:after {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 30px;
+      height: 30px;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 2px 0 0 2px;
+      content: "";
+    }
+  }
+  &__title {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  &__description {
+    color: #eee;
+  }
+  &:after {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+  }
+  &.a100,
+  &:hover {
+    cursor: pointer;
+    .card__content {
+      top: 0;
+      background: #000;
+      transition: all 1s ease-in-out;
+      &-inner{
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        transition: all 1s ease-in-out;
+      }
+    }
+  } 
+  &.a50{
+    .card__content {
+       top: 50%;
+      &-inner{
+        height: 50%;}
+    }
+    &:hover {
+      .card__content {
+         top: 0;
+        &-inner{
+          height: 100%;}
+      }      
+    }
+  }
+  &.a100{
+     &:hover {
+      .card__content {
+         top: calc(100% - 80px);
+        &-inner{
+          height: 80px;}
+      }
+    }
+  }
+}
+
+.images img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  

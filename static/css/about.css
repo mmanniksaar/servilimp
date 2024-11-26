@@ -23,7 +23,7 @@
 
   .about-container {
     display: flex;
-    background-color: #333;
+    background-color: #d31010;
     background: linear-gradient(to bottom right, #333, #958686);
     flex-wrap: wrap;
     align-items: flex-start;

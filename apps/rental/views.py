@@ -23,4 +23,4 @@ def rental_view(request, category_slug=None):
         'products': products,
     }
 
-    return render(request, 'rental.html', context)
+    return render(request, 'rental1.html', context)

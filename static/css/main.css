@@ -1,12 +1,11 @@
 body{
     font-family: Calibri;
-    max-height: 100%;
-    overflow: hidden;
-  /*  overflow-y: auto; */
+    overflow-y:hidden;
+
 } 
 
 .video-container {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
   }
