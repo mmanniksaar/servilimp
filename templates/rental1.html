@@ -12,6 +12,7 @@
   <aside>
     <ul>
       <li><a href="{% url 'rental' %}">All products</a></li>
+      <hr>
       {% for category in links %}
           <li><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
       {% endfor %}
@@ -25,30 +26,16 @@
       <div class="card">
         <div class="card__content">
           <div class="card__content-inner">
-            <div class="card__title">{{ product.product_name }}</div>
-            <div class="card__description">{{ product.description }}</div>
             <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}">
+
+            <div class="card__title">{{ product.product_name }}</div>
+            <br>
+            <div class="card__description">{{ product.description }}</div>
 
           </div>
         </div>
       </div>
-      <div class="card a50">
-        <div class="card__content">
-          <div class="card__content-inner">
-            <div class="card__title">{{ product.product_name }}</div>
-            <div class="card__description">{{ product.description }}</div>
-          </div>
-        </div>
-      </div>
-      <div class="card a100">
-        <div class="card__content">
-          <div class="card__content-inner">
-            <div class="card__title">{{ product.product_name }}</div>
-            <div class="card__description">{{ product.description }}</div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+          {% endfor %}
     {% else %}
       <div class="text-center">
         <h2>No items found.</h2>

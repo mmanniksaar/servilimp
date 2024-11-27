@@ -1,15 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html, body {
+  height: 90%; /* Tagab, et <body> ja <html> on täiskõrguses */
+  margin: 0;
+  padding: 0;
+}
+
 .video-container {
     display:flex;
     position: relative;
     width: 100%;
-    height: 100vh;
-    
-  }
+    height: 98vh;
+      }
   
   .video-content {
-    /*kasutuses*/
     flex: 1;
-    /* Video võtab ülejäänud laiuse */
   }
   
   .video-content video {
@@ -20,63 +29,72 @@
 
   .rental-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 toodet reas */
-    column-gap: 2.5vw;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 0.5vw;
     row-gap: 2.5vw;
-    background-color: #333;
     background: linear-gradient(to bottom right, #333, #958686);
-    padding: 2rem 2rem;
     transform: translate(-50%, -50%);
-    width: 70%;
+    width: 77%;
   
     border-radius: 1vw;
-    overflow-y: auto; /* Vertikaalne kerimine toodetele */
-    height: 90%;
-    box-sizing: border-box;
+    overflow-y: auto; 
+    scrollbar-width: none;
+
+    max-height: 85%;
     opacity: 0.98;
     position: absolute;
-  
-    top: 46%;
+  padding-bottom: 1.5vw;
+    top: 57%;
     left: 60%;
-    z-index: 20;
+    z-index: 2;
   
   }
 
 
-aside {
-    width: 20%; /* Umbes 1/5 ekraani laiusest */
-    background-color: #2e2727;
-    padding-top: 20px;
-    overflow-y: auto;
+  aside {
+    width: 20%; 
+    background: linear-gradient(to bottom right, #333, #958686);
+    top: 8%;
     position: fixed;
-    height: 90vh;
-    z-index: 20;
+    height: 100%;
+    z-index: 2;
+    overflow-y: auto; 
+    scrollbar-width: none;
+
   }
-  
   aside ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: block;
+    overflow-y: auto; 
+
+    position: relative;
+
   }
   
   aside li {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+
   }
   
   aside a {
     display: block;
-    padding: 10px;
+    padding: 0.5rem;
     text-decoration: none;
-    color: #333;
+    font-size: 1.5rem;
     font-weight: bold;
+    overflow: hidden;
+
+
   }
 
-.card {
+/* .card {
   position: relative;
   height: calc(100% - 30px);
-/*   width: calc(33.333% - 30px);
- */  background: #fff;
+   width: calc(33.333% - 30px);
+ background: #fff;
   overflow: hidden;
   float: left;
   margin: 15px;
@@ -177,10 +195,74 @@ aside {
     }
   }
 }
+ */
 
-.images img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
+ .card {
+  position: relative;
+  height: calc(100% - 30px);
+/*   width: calc(33.333% - 30px);
+ */ background: linear-gradient(to bottom right, #dbd3d3, #7e7878);
+  border-radius: 1vw;
+  border-style: double;
+  overflow: hidden;
+  float: left;
+  margin: 15px;
+  padding: 5px;
+  opacity: 0.6;
+ }
+
+.card__title{
+  font-size: 1.5rem;
+}
+
+.card__description {
+  width: auto;
+  height: 150px; /* Määrab konteineri kõrguse */
+  overflow-y: auto; /* Vertikaalne kerimine */
+  margin-top: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style:groove;
+  border-color: #0c0b0b;
+  padding: 8px;
+}
+
+.card:hover {opacity: 1;}
+
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
   }
   
+
+
+
+  @media (max-width: 300px) {
+    .card {
+      opacity: 1;
+    }
+  }
+
+    @media (max-width: 768px) {
+  .rental-container{
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 4vw;
+    top: 57%;
+    left: 50%;
+    width: 75%;
+  }
+
+  .card {
+    opacity: 1;
+  }
+
+  aside{
+    display: none;
+  }
+}

@@ -3,87 +3,34 @@
 {% block content %}
 
 <script type="text/javascript" src="{% static 'js/about.js' %}"></script>
- 
+<link href="{% static 'css/services.css' %}" type="text/css" rel="stylesheet">
 
 
-<style>
-
-.cleaning-container {
-  background-color: #333;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 3vw;
-  padding: 5vw;
-  padding-top: 2.5vw;
-  border-radius: 1vw;
-  width: 75%;
-  height: auto;
-  text-align: center;
-  opacity: 0.9;
-  overflow-y: scroll;
-  max-height: 85vh;
-
-
-
-
-   }
-
-h1 {
-    color: #f2e9e9;
-}
-
-
-.cleaning-txt {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-areas: "text";
-    padding: 2vw;
-    width: 100%;
-/*     margin: 20px;
- */    text-align: justify;
-}
-
-.cleaning-txt p {
-    grid-area: text;
-    width: 100%;
-    font-size: 25px;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-}
-
-.cleaning-txt img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-}
-
-
-.blurry-image {
-    filter: blur(0px);
-}
-</style>
-
-
-                    <div class="cleaning-container">
+<div class="video-container">
+<div class="cleaning-container">
                         <h1>Cleaning services</h1>
-
+                        <br>
                         <div class="cleaning-txt">
                             <p>
                                 Servilimp offers cleaning service for all types of needs, whether for a small apartment or a large residence.
 Imagine entering a fragrant, already clean home after a long day at work. Let us take care of your cleaning needs, so you can enjoy your well earned time off.
 Dismantling of waste containers and if necessary cleaning them, exchange of trash bags Vacuum cleaning and washing the floors Wiping of door handles and circuit breakers Putting the chairs beautifully in front of the workstations Wiping shelves and levels Wiping only empty space of the workstations Ensuring general cleanliness.
                             </p>
+                            <br>
+                            <hr>
+                            <br>
                             <img src="{% static 'pictures/button_container_bg2.jpeg' %}" class="blurry-image" alt="">
 
 
                         </div>
-                        </div>
-                    
+</div>
+<div class="video-content">
+    <video autoplay loop muted>
+        <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+</div>                   
 
     <script>
         var video = document.getElementById("myVideo");

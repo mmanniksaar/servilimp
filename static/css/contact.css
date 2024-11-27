@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .video-container {
   position: relative;
   width: 100%;
@@ -27,15 +32,17 @@
     flex-wrap: wrap;
     align-items: flex-start;
     position: absolute;
-    top: 46%;
+    top: 53%;
     left: 50%;
+    padding-bottom: 20px;
     transform: translate(-50%, -50%);
     border-radius: 1vw;
     width: 90%;
-    max-height: 80%; /* Määra maksimaalne kõrgus */
+    max-height: 80%; 
     text-align: center;
     opacity: 0.98;
     overflow-y: auto;
+    scrollbar-width: none;
     z-index: 10;
 }
 
@@ -70,12 +77,10 @@ input[type=text], select, textarea {
     font-size: 1.2vw;
     font-family: 'Arial';
     width: 100%;
-    padding: 12px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 0.5vw;
     box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
     resize: vertical;
     z-index: 20;
 }
@@ -88,7 +93,6 @@ input[type=submit] {
     height: 4vw;
     border-radius: 6vw;
     border: none;
-    cursor: pointer;
     z-index: 20;
 }
 
@@ -120,13 +124,17 @@ input[type=submit]:hover {
 @media (max-width: 768px) {
     .contact-container {
         display: block;
-        padding-left: 0.8rem;
-        padding-right: 0.8rem;
-        top: 47%;
-        bottom: 0;
-        height: 95%; 
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 4vw;
+        top: 53%;
+        height: 75%; 
+        width: 75%;
         max-height: 100%;
         overflow-y: scroll; 
+        z-index: 2;
     }
 
     .contact-info h1 {
