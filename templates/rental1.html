@@ -35,10 +35,19 @@
             <div class="product_price">{{ product.price }} Eur </div>
             <div class="VAT">+ 24% VAT / pcs.</div>
           </div>
+          <br>
+          <div style="display: flex; justify-content: center;">Available in stock: {{ product.stock }}</div>
+
             <br>
             <div class="card__description">{{ product.description }}</div>
             <br>
           </div>
+          <div style="display: flex; justify-content: center;">
+            <input id="quantity" type="number" value="0" min="0" step="1">
+          <div class="button_container">
+            <button class="button_add_order"><i class="fas fa-shopping-cart"></i>Add to Order</i></button>
+          </div>
+        </div>
         </div>
       </div>
           {% endfor %}
