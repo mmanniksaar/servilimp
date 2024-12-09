@@ -212,7 +212,10 @@ html, body {
  }
 
 .card__title{
+  display:flex;
   font-size: 1.5rem;
+  justify-content: center;
+
 }
 
 .card__description {
@@ -237,7 +240,21 @@ html, body {
   }
   
 
+.price_container{
+  background-color: #ffffff;
+}
 
+.product_price{
+  display: flex;
+  font-size: 2.5vh;
+  color: #000000;
+  justify-content: center;
+}
+
+.VAT{
+  display: flex;
+  justify-content: center;
+}
 
   @media (max-width: 300px) {
     .card {

@@ -27,11 +27,17 @@
         <div class="card__content">
           <div class="card__content-inner">
             <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}">
-
+            <br>
+            <br>
             <div class="card__title">{{ product.product_name }}</div>
             <br>
+          <div class="price_container">
+            <div class="product_price">{{ product.price }} Eur </div>
+            <div class="VAT">+ 24% VAT / pcs.</div>
+          </div>
+            <br>
             <div class="card__description">{{ product.description }}</div>
-
+            <br>
           </div>
         </div>
       </div>
