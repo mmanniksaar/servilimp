@@ -14,7 +14,7 @@ urlpatterns = [
     #path('admin/defender/', include('defender.urls')),  # defender admin
     path('clients/', include('apps.clients.urls')),        # 'clients/' clients.urls suunab faili clients/urls.py
     #path('rental/', views.rental, name='rental'),
-    path('rental/', include('apps.rental.urls')),
+    path('order/', include('apps.order.urls')),
     path('rental1/', include('apps.rental.urls')),
 
     path('gallery/', include('apps.gallery.urls')),        # 'gallery/' gallery.urls suunab faili gallery/urls.py

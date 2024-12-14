@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/gallery.css' %}" type="text/css" rel="stylesheet"> 
+
+
+<div class="video-container">
+
+<section class="section-content padding-y bg">
+    <div class="gallery-container" style="padding-top: 25vh; padding-bottom: 25vh; width: 70%;">
+<div class="container">
+ 
+<div class="card">
+	<div class="row no-gutters">
+		<aside class="col-md-6">
+<article class="gallery-wrap">
+	<div class="img-big-wrap">
+	   <a href="{{ product.get_url }}"><img src="{{ single_product.product_image.url }}" ></a>
+	</div> <!-- img-big-wrap.// -->
+
+</article> <!-- gallery-wrap .end// -->
+		</aside>
+		<main class="col-md-6 border-left">
+<article class="content-body">
+
+<h2 class="title">{{ single_product.product_name }}</h2>
+
+<div class="mb-3">
+	<var class="price h4">€{{ single_product.price }}</var>
+</div>
+
+<p>{{ single_product.description }}</p>
+
+<hr>
+
+	<!-- if not in the cart-->
+	{% if single_product.stock <= 0 %}
+		<h5 class="text-danger"> Out of Stock </h5>
+	{% else %}
+	{% if in_cart %}
+	<!-- added to cart-->
+			<a href="#" class="btn  btn-success" style="background-color:#482809"> <span class="text" >Added to Order</span> <i class="fas fa-check" ></i>  </a>
+			<a href="{% url 'cart' %}" class="btn  btn-outline-primary" style="color:#482809"> <span class="text">View Order</span> <i class="fas fa-eye" ></i>  </a>
+		{% else %}
+			<a href="{% url 'add_to_cart' single_product.id %}" class="btn  btn-primary" style="background-color:#482809";>  <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </a>
+		{% endif %}
+	{% endif %}
+</article> <!-- product-info-aside .// -->
+		</main> <!-- col.// -->
+	</div> <!-- row.// -->
+</div> <!-- card.// -->
+
+<br>
+
+</div> <!-- container .//  -->
+</div>
+</section>
+
+<div class="video-content">
+    <video autoplay loop muted>
+        <source src="{% static 'videos/2000.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+</div>
+</div>
+{% endblock %}

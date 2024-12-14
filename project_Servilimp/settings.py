@@ -29,10 +29,12 @@ INSTALLED_APPS = [
     'apps.rental',
     'apps.category',
     'apps.about',
+    'apps.order',
     'cloudinary',
     'crispy_forms',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    'django_extensions',
     'meta',
 
     #'axes',
