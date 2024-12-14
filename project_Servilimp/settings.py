@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.sitemaps',
     'django.contrib.sites',
-    'django_extensions',
     'meta',
 
     #'axes',
