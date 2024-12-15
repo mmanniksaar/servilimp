@@ -41,11 +41,11 @@ html, body {
     overflow-y: auto; 
     scrollbar-width: none;
 
-    max-height: 85%;
+    max-height: 89%;
     opacity: 0.98;
     position: absolute;
-  padding-bottom: 1.5vw;
-    top: 57%;
+    padding-bottom: 1.5vw;
+    top: 53%;
     left: 60%;
     z-index: 2;
   
@@ -53,11 +53,15 @@ html, body {
 
 
   aside {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
     width: 20%; 
     background: linear-gradient(to bottom right, #333, #958686);
     top: 8%;
     position: fixed;
-    height: 100%;
+    height: 87%;
     z-index: 2;
     overflow-y: auto; 
     scrollbar-width: none;
@@ -68,8 +72,6 @@ html, body {
     padding: 0;
     margin: 0;
     display: block;
-    overflow-y: auto; 
-
     position: relative;
 
   }
@@ -85,7 +87,6 @@ html, body {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
-    overflow: hidden;
 
 
   }
