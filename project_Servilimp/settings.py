@@ -10,8 +10,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-#DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-DEBUG = 'True'
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+#DEBUG = 'False'
 
 ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'servilimp-16a386567b31.herokuapp.com']
 
@@ -35,15 +35,45 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.sites',
     'meta',
+    'sslserver',
 
     #'axes',
     #'defender',
 ]
 
+""" # Suunab kõik HTTP-päringud automaatselt HTTPS-ile
+SECURE_SSL_REDIRECT = True   # Tootmisversioonis peab olema True
+
+SECURE_HSTS_SECONDS = 31536000  
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  
+SECURE_HSTS_PRELOAD = True  
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+if DEBUG:
+# Suunab kõik HTTP-päringud automaatselt HTTPS-ile
+    SECURE_SSL_REDIRECT = False  # Tootmisversioonis peab olema True
+# Tagab, et sessiooni ja CSRF küpsised saadetakse ainult HTTPS kaudu
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    # HSTS seaded võivad samuti olla arenduskeskkonnas välja lülitatud
+    SECURE_HSTS_SECONDS = 0
+else:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    # HSTS seaded
+    SECURE_HSTS_SECONDS = 31536000          # 1 aasta (sekundites)
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True   # Ka alamdomeenide jaoks
+    SECURE_HSTS_PRELOAD = True              # Kui soovid end registreerida preload nimekirjadesse
+
+ """
+
 SITE_ID = 1
 
 META_SITE_PROTOCOL = "https"
-META_SITE_DOMAIN = "127.0.0.1:8000"
+META_SITE_DOMAIN = "www.servilimp.fi"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,12 +84,29 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'csp.middleware.CSPMiddleware',
     #'defender.middleware.FailedLoginMiddleware',
     #'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'project_Servilimp.urls'
+
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = (
+    "'self'",
+    "https://trusted.cdn.com",
+    "https://cdnjs.cloudflare.com",
+)
+CSP_STYLE_SRC = (
+    "'self'",
+    "https://trusted.cdn.com",
+    "https://cdnjs.cloudflare.com",
+)
+CSP_IMG_SRC = ("'self'", "https://res.cloudinary.com", "data:")
+CSP_FONT_SRC = (
+    "'self'",
+    "https://cdnjs.cloudflare.com",
+)
 
 TEMPLATES = [
     {
