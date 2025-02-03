@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import dj_database_url
-import redis
+#import redis
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 load_dotenv()
@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 #DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 DEBUG = True
 
-ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'servilimp-16a386567b31.herokuapp.com']
+ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'localhost', 'servilimp-16a386567b31.herokuapp.com']
 
 WHITENOISE_MANIFEST_STRICT = False
 
@@ -273,3 +273,23 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+
+
+""" import sentry_sdk
+
+sentry_sdk.init(
+    dsn="https://2f75d6c363858cc77d3357399446fe0c@o4508756402438144.ingest.de.sentry.io/4508756406435920",
+    # Add data like request headers and IP for users,
+    # see https://docs.sentry.io/platforms/python/data-management/data-collected/ for more info
+    send_default_pii=True,
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for tracing.
+    traces_sample_rate=1.0,
+    _experiments={
+        # Set continuous_profiling_auto_start to True
+        # to automatically start the profiler on when
+        # possible.
+        "continuous_profiling_auto_start": True,
+    },
+) """

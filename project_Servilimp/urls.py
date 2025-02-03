@@ -4,6 +4,10 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
     path('', views.home, name='home'),        # '' tähendab, et tegemist on esilehega- home.html, index.html jne.
     path('about/', views.about, name='about'), 
@@ -16,6 +20,7 @@ urlpatterns = [
     #path('rental/', views.rental, name='rental'),
     path('order/', include('apps.order.urls')),
     path('rental1/', include('apps.rental.urls')),
+    path('sentry-debug/', trigger_error),
 
     path('gallery/', include('apps.gallery.urls')),        # 'gallery/' gallery.urls suunab faili gallery/urls.py
               ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
