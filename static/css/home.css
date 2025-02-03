@@ -92,14 +92,17 @@
 }
 
 .choice-button1 {
-    background-image: url('/static/pictures/button_container_bg2.jpeg');
+    background-image: url("../pictures/button_container_bg2.jpeg"); 
+
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .choice-button2 {
-    background-image: url('/static/pictures/button_container_bg1.jpeg');
+    background-image: url("../pictures/button_container_bg1.jpeg");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -328,7 +331,7 @@ grid-template-row: 300px 300px;
 }
 
 .choice-button1 {
-    background-image: url('/static/pictures/button_container_bg2.jpeg');
+    background-image: url('../pictures/button_container_bg2.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -337,7 +340,7 @@ grid-template-row: 300px 300px;
 }
 
 .choice-button2 {
-    background-image: url('/static/pictures/button_container_bg1.jpeg');
+    background-image: url('../pictures/button_container_bg1.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
