@@ -26,6 +26,7 @@ django-sekizai==3.0.1
 django-treebeard==4.6.0
 djangocms-admin-style==3.3.0
 djangocms-page-meta==1.4.0
+django-csp==3.8
 easy-thumbnails==2.10
 gunicorn==21.2.0
 idna==3.6
