@@ -93,7 +93,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'project_Servilimp.urls'
 
-""" CSP_DEFAULT_SRC = ("'self'",)
+CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = (
     "'self'",
     "https://trusted.cdn.com",
@@ -109,7 +109,7 @@ CSP_IMG_SRC = ("'self'", "https://res.cloudinary.com", "data:")
 CSP_FONT_SRC = (
     "'self'",
     "https://cdnjs.cloudflare.com",
-) """
+)
 
 TEMPLATES = [
     {
