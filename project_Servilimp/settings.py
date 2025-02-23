@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 #DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'localhost', 'servilimp-16a386567b31.herokuapp.com']
 
@@ -235,12 +235,16 @@ USE_TZ = True
 #DEFENDER_DISABLE_USERNAME_LOCKOUT = False
 #DEFENDER_LOCKOUT_TEMPLATE = 'path/to/lockout_template.html'
 
-
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #BASE_DIR /'static' 
+STATICFILES_DIRS = [
+    'static',
+]
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 #media files conf
