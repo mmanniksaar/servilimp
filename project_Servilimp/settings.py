@@ -101,6 +101,7 @@ CSP_SCRIPT_SRC = (
 )
 CSP_STYLE_SRC = (
     "'self'",
+    "'unsafe-inline'",
     "https://trusted.cdn.com",
     "https://cdnjs.cloudflare.com",
 )
