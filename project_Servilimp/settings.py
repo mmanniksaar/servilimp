@@ -14,11 +14,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 #DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 DEBUG = False
 
-ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'localhost', 'servilimp-16a386567b31.herokuapp.com']
+ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'localhost', 'servilimp-16a386567b31.herokuapp.com', 'www.servilimp-16a386567b31.herokuapp.com']
 
-WHITENOISE_MANIFEST_STRICT = False
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -26,7 +26,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    "whitenoise.runserver_nostatic",
     'apps.gallery',
     'apps.clients',
     'apps.rental',
@@ -237,14 +236,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #BASE_DIR /'static' 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 STATICFILES_DIRS = [
     'static',
 ]
 
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+WHITENOISE_MANIFEST_STRICT = False
 
 
 #media files conf
@@ -298,3 +304,25 @@ sentry_sdk.init(
         "continuous_profiling_auto_start": True,
     },
 ) """
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}

@@ -7,5 +7,4 @@ def gallery_view(request):
     context = {
         'gallery_items': gallery_items,
     }
-    print(gallery_items)
     return render(request, 'gallery.html' ,context)

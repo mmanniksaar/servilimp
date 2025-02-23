@@ -3,7 +3,6 @@ from .models import Client
 
 def clients_view(request):
     clients_items = Client.objects.all()
-    print(clients_items)
     if not clients_items:
         print("No client objects found.")
     context = {'clients_items': clients_items}

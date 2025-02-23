@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.video-container {     
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+}
+
+
+.video-content {      
+  flex: 1; 
+}
+
+.video-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.cleaning-container {
+  background: linear-gradient(to bottom right, #333, #958686);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 1vw;
+  width: 85%;
+  max-height: 80%; 
+  text-align: center;
+  opacity: 0.98;
+  overflow-y: auto;
+  scrollbar-width: none;
+  z-index: 5;
+
+   }
+
+
+.cleaning-txt {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "text";
+    width: 100%;
+
+
+}
+
+.cleaning-txt p {
+    width: auto;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.cleaning-txt img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1vw;
+}
+
+
+.blurry-image {
+    filter: blur(0px);
+}
+
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    z-index: 1;
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+
+  /*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .gallery-container {
+    margin-inline: 1rem;
+  }
+}
+
+/* For medium devices */
+@media (max-width: 768px) {
+  .cleaning-container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #333;
+    overflow-y: scroll;
+    border-radius: 4vw;
+
+    top: 53%;
+    width: 85%;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+
+.cleaning-txt {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "text";
+    width: 100%;
+    text-align: justify;
+}
+
+.cleaning-txt p {
+    grid-area: text;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.cleaning-txt img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1vw;
+}
+
+
+.blurry-image {
+    filter: blur(0px);
+}
+
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    z-index: 1;
+    font-size: 2rem;
+  }
+
+
+}
