@@ -96,6 +96,7 @@ ROOT_URLCONF = 'project_Servilimp.urls'
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = (
     "'self'",
+    "'sha256-bQijLIWKcfWWxFx7OtiK9qfKSxQIsMgfkvT3MnNHQ20='",
     "https://trusted.cdn.com",
     "https://cdnjs.cloudflare.com",
 )
@@ -105,9 +106,14 @@ CSP_STYLE_SRC = (
     "https://trusted.cdn.com",
     "https://cdnjs.cloudflare.com",
 )
-CSP_IMG_SRC = ("'self'", "https://res.cloudinary.com", "data:")
+CSP_IMG_SRC = ("'self'",
+               "https://res.cloudinary.com",
+                "data:",
+                "'sha256-bQijLIWKcfWWxFx7OtiK9qfKSxQIsMgfkvT3MnNHQ20='",
+)
 CSP_FONT_SRC = (
     "'self'",
+    "'sha256-bQijLIWKcfWWxFx7OtiK9qfKSxQIsMgfkvT3MnNHQ20='",
     "https://cdnjs.cloudflare.com",
 )
 
