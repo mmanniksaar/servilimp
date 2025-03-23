@@ -30,20 +30,20 @@ def rental(request, category_slug=None):
 
 
 def product_detail(request, category_slug, product_slug):
+    in_cart = False  # Vaikimisi väärtus, juhuks kui midagi läheb valesti
     try:
         single_product = Product.objects.get(category__slug=category_slug, slug=product_slug)
 
         if request.user.is_authenticated:
-            # Otsime toote kasutaja ostukorvist
             in_cart = CartItem.objects.filter(user=request.user, product=single_product).exists()
         else:
-            # Otsime toote anonüümsest ostukorvist (kasutades session cart_id)
             in_cart = CartItem.objects.filter(cart__cart_id=_cart_id(request), product=single_product).exists()
 
     except Product.DoesNotExist:
-        return redirect('home')  # Suunatakse avalehele, kui toodet pole
+        return redirect('home')
     except Exception as e:
         print(f"Viga product_detail vaates: {e}")
+        raise e  # või return redirect('home')
 
     context = {
         'single_product': single_product,
