@@ -25,6 +25,7 @@ django-redis-cache==3.0.1
 django-sekizai==3.0.1
 django-treebeard==4.6.0
 djangocms-admin-style==3.3.0
+django-location-field==2.1.0
 djangocms-page-meta==1.4.0
 django-csp==3.8
 easy-thumbnails==2.10
