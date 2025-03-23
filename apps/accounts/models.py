@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from location_field.models.plain import PlainLocationField
 
 class MyAccountManager(BaseUserManager):
     # Create normal user
@@ -53,6 +54,7 @@ class Account(AbstractBaseUser):
     is_active = models.BooleanField(default=False)
     is_superadmin = models.BooleanField(default=False)
     city = models.CharField(max_length=255, default= '')
+    location = PlainLocationField(based_fields=['city'], zoom=7, default='58.91599192355906,25.400390625') 
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
