@@ -36,7 +36,7 @@ def register(request):
             # user activation
             current_site = get_current_site(request)
             mail_subject = 'Activate your account.'
-            message = render_to_string('accounts/account_verification_email.html', {
+            message = render_to_string('account_verification_email.html', {
                 'user': user,
                 'domain': current_site,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),  # encode users primari key
