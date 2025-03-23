@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from location_field.models.plain import PlainLocationField
 
 class MyAccountManager(BaseUserManager):
     # Create normal user
