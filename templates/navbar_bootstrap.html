@@ -1,0 +1,83 @@
+{% load static %}
+
+<header class="section-header">
+
+ <!--  <nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+    
+        <ul class="navbar-nav">
+           <li><a img src="{% static 'pictures/email_devlop.png' %}"  alt="" class="zoom" style="border-right-width: 0px; border-right-style: solid; margin-right: 8px;"><i class="fa fa-envelope" style="margin-top: 11px;"></i> Email </a></li>
+           <li><a img src="{% static 'pictures/callus_devlop.png' %}" alt="" class="zoom" style="border-right-width: 0px; border-right-style: solid; margin-right: 50px;"> <i class="fa fa-phone" style="margin-top: 11px;"></i> Call us </a></li>
+    
+        </ul> 
+      </div> 
+    </div> 
+    </nav>-->
+    
+<section class="header-main border-bottom">
+   <!-- <div class="container">-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light py-">
+
+
+
+        <div class="row align-items-center">
+           <!-- <div class="col-lg col-sm col-md col-6 flex-grow-0">
+                <div class="category-wrap dropdown d-inline-block float-right">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color:#482809">
+                        <i class="fa fa-bars"></i> All category
+                    </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'rental' %}">All products</a>
+                            {% for category in links %}
+                                <a class="dropdown-item" href="{{ category.get_url}}">{{ category.category_name }} </a>
+                            {% endfor %}
+                        </div>
+                </div>  
+            </div> -->
+        
+           <!-- <div class="d-flex justify-content-between">-->
+                <a href="{% url 'home' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">Home</a>
+                <a href="{% url 'about' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">About</a>
+                <a href="{% url 'clients' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">Our clients</a>
+                <a href="{% url 'gallery' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">Gallery</a>
+                <a href="{% url 'contact' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">Contact Us</a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
+                <div class="d-flex justify-content-end mb-3 mb-lg-0">
+                    {% if user.id is  None %}
+                        <div class="widget-header">
+                            <small class="title text-muted">Welcome quest!</small>
+                                <div>
+                                    <a href="{% url 'login' %}">Log in</a> <span class="dark-transp"> | </span>
+                                    <a href="{% url 'register' %}"> Register</a>
+                                </div>
+                        </div>
+                    {% else %}
+                        <div class="widget-header">
+                            <small class="title text-muted">Welcome {{ user.first_name }}!</small>
+                            <div>
+                                <a href="#">You are logged in.</a> <span class="dark-transp"> | </span>
+                                <a href="{% url 'logout' %}"> Logout</a>
+                            </div>
+                    {% endif %}
+                            <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3">
+                            {% if cart_count == 0 %}
+                                <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart" style="color:#e8e7d0;margin-top: 8px;"></i></div>
+                                <span class="badge badge-pill badge-danger notify">{{ cart_count }}</span>
+                            {% else %}
+                                <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart" style="color:#008561;margin-top: 8px;"></i></div>
+                                <span class="badge badge-pill badge-danger notify"style="margin-top: 6px;">{{ cart_count }}</span>
+                            {% endif %}
+                            </a>
+                        </div> <!-- widgets-wrap.// -->
+                </div> <!-- col.// -->
+            </div>
+        </div> <!-- row.// -->
+    </div> <!-- container.// -->
+    
+</section> <!-- header-main .// -->
+</header> <!-- section-header.// -->

@@ -1,0 +1,32 @@
+/* Register konteiner keskele ekraanil */
+.section{
+    padding-top: 80px;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 500px; /* Väiksem registreerimisaken */
+    padding: 20px;
+}
+
+/* Registreerimisvorm (Bootstrap card) */
+.card {
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Kerge vari */
+}
+
+/* Vormiväljade kõrgus */
+.form-control {
+    height: 45px;
+}
+
+/* Registreerimisnupp väiksemaks */
+.btn-block {
+    padding: 10px;
+}
+
+/* Väiksem font login tekstidele */
+p {
+    font-size: 14px;
+}

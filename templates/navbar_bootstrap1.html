@@ -1,0 +1,53 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- Hamburgeri menüü nupp -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar lingid -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav d-flex flex-row justify-content-center w-100">
+                <li class="nav-item">
+                    <a href="{% url 'home' %}" class="btn btn-primary mx-2">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}" class="btn mx-2" style="background-color:#ad6823">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'clients' %}" class="btn mx-2" style="background-color:#ad6823">Our Clients</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'gallery' %}" class="btn mx-2" style="background-color:#ad6823">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'contact' %}" class="btn mx-2" style="background-color:#ad6823">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <a href="{% url 'home' %}" class="btn btn-primary flex-fill mx-1">Home</a>
+            <a href="{% url 'about' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">About</a>
+            <a href="{% url 'clients' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">Our clients</a>
+            <a href="{% url 'gallery' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">Gallery</a>
+            <a href="{% url 'contact' %}" style="background-color:#ad6823" class="btn btn-primary flex-fill mx-1">Contact Us</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ -->

@@ -4,7 +4,7 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link href="{% static 'css/zoom.css' %}" type="text/css" rel="stylesheet">
-<link href="{% static 'css/rental.css' %}" type="text/css" rel="stylesheet"> 
+<link href="{% static 'css/rental1.css' %}" type="text/css" rel="stylesheet"> 
 
 <script type="text/javascript" src="{% static 'js/card.js' %}"></script>
 <div class="video-container">
@@ -12,6 +12,7 @@
   <aside>
     <ul>
       <li><a href="{% url 'rental' %}">All products</a></li>
+      <hr>
       {% for category in links %}
           <li><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
       {% endfor %}
@@ -22,30 +23,38 @@
   <div class="rental-container">
     {% if products %}
       {% for product in products %}
-        <div class="card-container">
-          <div class="images">
+      <div class="card">
+        <div class="card__content">
+          <div class="card__content-inner">
             <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}">
+            <br>
+            <br>
+            <div class="card__title">{{ product.product_name }}</div>
+            <br>
+          <div class="price_container">
+            <div class="product_price">{{ product.price }} Eur </div>
+            <div class="VAT">+ 24% VAT / pcs.</div>
           </div>
-          <div class="product">
-            <h1>{{ product.product_name }}</h1>
-            <h1>{{ product.size }} {{ product.unit }}</h1>
-            <h2>{{ product.price }}€ + 24% VAT</h2>
-            <div class="desc-container">
-              <p class="desc">{{ product.description }}</p>
-            </div>
-            <div class="buttons">
-              <a href="{% url 'contact' %}" class="add">Add to Order</a>
-              <a class="like"><span>🔐</span></a>
-            </div>
+          <br>
+          <div style="display: flex; justify-content: center;">Available in stock: {{ product.stock }}</div>
+
+            <br>
+            <div class="card__description">{{ product.description }}</div>
+            <br>
           </div>
+          <div class="button_container">
+            <a href='{{ product.get_url }}' class="button_add_order"><i class="fas fa-shopping-cart"></i>Add to Order</i></a>
+          </div>
+
         </div>
-      {% endfor %}
+      </div>
+          {% endfor %}
     {% else %}
       <div class="text-center">
         <h2>No items found.</h2>
         <hr>
         <br>
-        <a href="{% url 'rental' %}" class="btn btn-primary" style="background-color:#482809;">Continue shopping</a>
+        <a href="{% url 'rental' %}" class="button_add_order" >Continue shopping</a>
       </div>
     {% endif %}
   </div>
@@ -57,4 +66,16 @@
       </video>
 
   </div>
+
+  <script>
+    function changeQuantity(change) {
+        let input = document.getElementById('quantity');
+        let currentValue = parseInt(input.value);
+        let newValue = currentValue + change;
+
+        if (newValue >= 0) { // Kogus ei saa olla väiksem kui 1
+            input.value = newValue;
+        }
+    }
+</script>
 {% endblock %}

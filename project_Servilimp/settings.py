@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 #DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-DEBUG = False
+DEBUG = True #False
 
 ALLOWED_HOSTS = ['servilimp.fi', 'www.servilimp.fi', '127.0.0.1', 'localhost', 'servilimp-16a386567b31.herokuapp.com', 'www.servilimp-16a386567b31.herokuapp.com']
 
@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'apps.rental',
     'apps.category',
     'apps.about',
-    'apps.order',
+    'apps.accounts',
+    'apps.carts',
     'cloudinary',
     'crispy_forms',
     'django.contrib.sitemaps',
@@ -76,6 +77,8 @@ SITE_ID = 1
 
 META_SITE_PROTOCOL = "https"
 META_SITE_DOMAIN = "www.servilimp.fi"
+LOGIN_REDIRECT_URL = '/cart/merge_cart/'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -90,6 +93,9 @@ MIDDLEWARE = [
     #'defender.middleware.FailedLoginMiddleware',
     #'axes.middleware.AxesMiddleware',
 ]
+
+AUTH_USER_MODEL = 'accounts.Account'
+
 
 ROOT_URLCONF = 'project_Servilimp.urls'
 
@@ -122,6 +128,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'apps.category.context_processors.menu_links', #now context_processors is available in all templates
+                'apps.carts.context_processors.counter', #now context_processors is available in all templates
+
             ],
         },
     },
@@ -207,7 +215,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-
 #AXES_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/1'
 #DEFENDER_REDIS_URL = os.getenv('REDISCLOUD_URL') + '/2'
 
@@ -275,13 +282,14 @@ EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS_STATE')
 
 
 if 'DATABASE_URL' in os.environ:
-    DATABASES = {'default': dj_database_url.config()}
+    DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 else:
     # Lokaliseerimiseks (local development) kasutame SQLite'i.
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
+            'CONN_MAX_AGE': 60,
         }
     }
 
@@ -305,7 +313,7 @@ sentry_sdk.init(
     },
 ) """
 
-LOGGING = {
+""" LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
@@ -325,4 +333,4 @@ LOGGING = {
             'propagate': True,
         },
     },
-}
+} """
