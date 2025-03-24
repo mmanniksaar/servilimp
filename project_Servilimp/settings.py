@@ -38,11 +38,27 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.sites',
     'meta',
+    'location_field.apps.DefaultConfig',
+
     #'sslserver',
 
     #'axes',
     #'defender',
 ]
+
+
+LOCATION_FIELD = {
+ #   'provider.google.api': '//maps.google.com/maps/
+    #  api/js?sensor=false',
+    'map.provider': 'google',
+    'map.zoom': 7,
+    'search.provider': 'google',
+    'search.suffix': '',
+    'provider.google.api_key': 'AIzaSyCJjrJOth0XfqOEv6SY8y7uNYdAfkFTwLI',
+    'provider.google.api_libraries': '',
+    'provider.google.map.type': 'ROADMAP',
+}
+
 
 """ # Suunab kõik HTTP-päringud automaatselt HTTPS-ile
 SECURE_SSL_REDIRECT = True   # Tootmisversioonis peab olema True
