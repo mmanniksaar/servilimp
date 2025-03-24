@@ -15,6 +15,17 @@ class AccountAdmin(UserAdmin):
     ordering = ('-date_joined',)
     #image_tag.short_description = 'User image'
 
+        # Disable admin log entries for this model to avoid foreign key issues
+    def log_addition(self, request, object, message):
+        pass
+
+    def log_change(self, request, object, message):
+        pass
+
+    def log_deletion(self, request, object, message):
+        pass
+
+
 
     filter_horizontal = ()
     list_filter = ()
