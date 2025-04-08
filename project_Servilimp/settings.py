@@ -300,7 +300,6 @@ EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS_STATE')
 if 'DATABASE_URL' in os.environ:
     DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 else:
-    # Lokaliseerimiseks (local development) kasutame SQLite'i.
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
